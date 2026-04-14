@@ -1,0 +1,448 @@
+{
+  "decisions": [
+    {
+      "id": "portal-1",
+      "phase": 1,
+      "title": "Where Does Your Data Come From?",
+      "description": "A portal is only as good as its listings. Where you get your data defines your relationships, your costs, and whether agents see you as friend or foe.",
+      "choices": [
+        {
+          "id": "portal-1-A",
+          "label": "MLS Direct Feeds",
+          "description": "Negotiate direct data feeds from every MLS in the country. Expensive licensing, but your data is complete and agents trust that you're playing by the rules.",
+          "effects": { "cash": -20, "consumerTrust": 5, "agentRep": 10, "revenue": 0, "marketShare": 1 },
+          "flags": {},
+          "revealText": "The MLS is the lifeblood of real estate data, but access comes with strings attached. Every MLS has different rules, different feeds, different politics. Jeremy Wacksman noted that Zillow's early decision to work within the MLS system — even when it was painful — built credibility that took years to earn and seconds to lose.",
+          "revealSource": "Jeremy Wacksman — The Tech to Power the Industry"
+        },
+        {
+          "id": "portal-1-B",
+          "label": "Scrape & Aggregate",
+          "description": "Build crawlers that pull listing data from public sources. Fast and cheap, but agents and MLSs will see you as a parasite stealing their data.",
+          "effects": { "cash": -5, "consumerTrust": 5, "agentRep": -15, "revenue": 0, "marketShare": 2 },
+          "flags": {},
+          "revealText": "The scraping approach gets you to market fast, but it poisons the well with agents. Lisa Farrar observed that portals who took shortcuts on data sourcing spent years trying to repair agent relationships — and some never did. The speed advantage evaporates when your data suppliers actively work against you.",
+          "revealSource": "Lisa Farrar — Portals, Power, and the Consumer"
+        },
+        {
+          "id": "portal-1-C",
+          "label": "Agent-Submitted Listings",
+          "description": "Let agents upload their own listings directly. Free data, and agents love the control — but coverage will be incomplete and inconsistent for years.",
+          "effects": { "cash": 0, "consumerTrust": -5, "agentRep": 10, "revenue": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "David Mele emphasized that agent-submitted models build loyalty but create a chicken-and-egg problem: consumers won't come without listings, and agents won't submit without consumers. You need extreme patience or a parallel strategy to survive the early years of sparse inventory.",
+          "revealSource": "David Mele — Building the Listing Engine"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-2",
+      "phase": 1,
+      "title": "How Do You Make Money?",
+      "description": "You have listings on a screen. Now you need a business model. Each path defines how agents and consumers will perceive you forever.",
+      "choices": [
+        {
+          "id": "portal-2-A",
+          "label": "Sell Leads to Agents",
+          "description": "Zillow's Premier Agent model: consumers search, you capture their intent, and agents pay for the connection. High revenue, but agents resent paying for leads on their own listings.",
+          "effects": { "cash": 5, "revenue": 10, "agentRep": -10, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Jeremy Wacksman described the Premier Agent model as one of the most effective monetization engines in proptech — but also one of the most contentious. Agents paying to advertise next to their own listings created a deep, structural resentment that shaped every competitive move for a decade.",
+          "revealSource": "Jeremy Wacksman — The Tech to Power the Industry"
+        },
+        {
+          "id": "portal-2-B",
+          "label": "Be the Agent Yourself",
+          "description": "The Redfin model: employ your own agents and own the transaction end-to-end. You capture the commission, but every agent in America now sees you as a direct competitor.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": -20, "consumerTrust": 10, "marketShare": 1 },
+          "flags": { "setsFlexRisk": true },
+          "revealText": "Guy Gal reflected on the fundamental tension of the integrated model: you get better unit economics and control the customer experience, but you declare war on an industry of two million agents. Redfin proved it could work, but twenty years later they still haven't won the war.",
+          "revealSource": "Guy Gal — The Integrated Brokerage Bet"
+        },
+        {
+          "id": "portal-2-C",
+          "label": "Subscription SaaS",
+          "description": "Charge agents a monthly fee for premium tools and placement. Steady, predictable revenue, but the dollars are small and growth is slow.",
+          "effects": { "cash": 0, "revenue": 5, "agentRep": 5, "consumerTrust": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Gene Millman argued that subscription models are the most sustainable path for portals because they align incentives — agents pay for value, not for leads they may never convert. The problem is that SaaS revenue in real estate is measured in tens of millions, not billions.",
+          "revealSource": "Gene Millman — The SaaS Play in Real Estate"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-3",
+      "phase": 1,
+      "title": "SEO or Brand?",
+      "description": "How do consumers find you? This decision determines your growth curve and your burn rate for the next five years.",
+      "choices": [
+        {
+          "id": "portal-3-A",
+          "label": "Win Search Rankings",
+          "description": "Invest heavily in SEO and content, the way Zillow dominated Google for a decade. Slow compounding growth, but once you own 'homes for sale in [city]' it's nearly unbeatable.",
+          "effects": { "cash": -10, "revenue": 0, "agentRep": 0, "consumerTrust": 5, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Jun Choo explained that Zillow's SEO dominance was not an accident — it was years of engineering investment in page speed, structured data, and content depth. The moat is real, but it takes three to five years to compound, and Google can change the rules overnight.",
+          "revealSource": "Jun Choo — Customer Problems First"
+        },
+        {
+          "id": "portal-3-B",
+          "label": "Massive Brand Advertising",
+          "description": "Follow CoStar's playbook: spend billions on Super Bowl ads, celebrity endorsements, and billboards. Immediate awareness, but the cash burn is staggering.",
+          "effects": { "cash": -25, "revenue": 5, "agentRep": 0, "consumerTrust": 10, "marketShare": 3 },
+          "flags": {},
+          "revealText": "Carrie Armstrong observed CoStar's strategy of spending three billion dollars on Homes.com advertising with a mix of awe and skepticism. Brand spending creates awareness, but awareness without a superior product is just expensive noise. The question is whether the product can catch up before the money runs out.",
+          "revealSource": "Carrie Armstrong — The Portal Wars"
+        },
+        {
+          "id": "portal-3-C",
+          "label": "Build the Best Product",
+          "description": "Focus on user experience and let the product speak for itself. The cheapest path, but in real estate, consumers don't switch portals for a better UI.",
+          "effects": { "cash": -5, "revenue": 0, "agentRep": 0, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Varun Krishna delivered a sobering insight: in real estate search, the user experience does not matter a whole lot. Consumers go where the listings are. You can build the most elegant product in the world, but if your competitor has more homes, consumers will use the ugly site with more data.",
+          "revealSource": "Varun Krishna — How Do I Get You a Loan"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-4",
+      "phase": 1,
+      "title": "How Do You Fund This?",
+      "description": "Portals are capital-intensive. Data licensing, engineering, marketing — none of it is cheap. How you fund determines what you can build and who you answer to.",
+      "choices": [
+        {
+          "id": "portal-4-A",
+          "label": "Raise Massive VC",
+          "description": "Go the venture route: raise hundreds of millions to blitz the market. You'll have the capital to move fast, but the clock starts ticking toward a massive exit or IPO.",
+          "effects": { "cash": 60, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsVentureClock": true },
+          "revealText": "Jeremy Wacksman reflected on how venture capital enabled Zillow to invest in product and marketing at a pace no bootstrapped competitor could match. But the expectation of exponential returns shaped every strategic decision — sometimes pushing toward growth at the expense of sustainability.",
+          "revealSource": "Jeremy Wacksman — The Tech to Power the Industry"
+        },
+        {
+          "id": "portal-4-B",
+          "label": "Go Public Early",
+          "description": "IPO while you're still small to access public markets. Less capital than VC, but you gain credibility and currency for acquisitions. Quarterly earnings pressure begins immediately.",
+          "effects": { "cash": 30, "revenue": 0, "agentRep": 0, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Lisa Farrar noted that going public early gives you a war chest and acquisition currency, but it also means every quarter becomes a performance review. Long-term product bets get harder to justify when Wall Street wants to see next quarter's revenue growth.",
+          "revealSource": "Lisa Farrar — Portals, Power, and the Consumer"
+        },
+        {
+          "id": "portal-4-C",
+          "label": "Bootstrap It",
+          "description": "Fund the company from revenue and personal savings. No outside pressure, but you'll be outgunned by competitors who raised hundreds of millions.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 5, "consumerTrust": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "David Mele argued there is something to be said for building a portal without outside money — you make decisions for the business, not for investors. But he also acknowledged the brutal reality: a bootstrapped portal competing against Zillow's marketing budget is like bringing a knife to an artillery fight.",
+          "revealSource": "David Mele — Building the Listing Engine"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-5",
+      "phase": 2,
+      "title": "Agents Don't Trust You",
+      "description": "Your traffic is growing, but agents are furious. You're monetizing their listings, showing competitor ads on their properties, and they feel exploited. How do you respond?",
+      "choices": [
+        {
+          "id": "portal-5-A",
+          "label": "Become Their Ally",
+          "description": "Invest in agent tools: CRM, tour scheduling, market reports. Make yourself indispensable so they can't afford to leave, even if they resent you.",
+          "effects": { "cash": -15, "revenue": 0, "agentRep": 10, "consumerTrust": 0, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Carrie Armstrong described how the smartest portals eventually realized that agents control the listings, and listings are the product. Building tools that make agents more productive is not charity — it is the only sustainable way to ensure your data supply never gets cut off.",
+          "revealSource": "Carrie Armstrong — The Portal Wars"
+        },
+        {
+          "id": "portal-5-B",
+          "label": "Charge Them More",
+          "description": "You have the traffic, they need the leads. Raise prices for premium placement and lead access. Squeeze the agents while you have leverage.",
+          "effects": { "cash": 5, "revenue": 10, "agentRep": -15, "consumerTrust": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Jun Choo acknowledged the temptation to raise prices when you have leverage, but warned it creates a doom loop. Agents who feel gouged will fund any competitor who promises to treat them better. Short-term revenue gains plant the seeds of long-term disruption.",
+          "revealSource": "Jun Choo — Customer Problems First"
+        },
+        {
+          "id": "portal-5-C",
+          "label": "Go Direct-to-Consumer",
+          "description": "Cut agents out entirely and connect consumers directly with sellers. Revolutionary if it works, but you'll face an industry united against you.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": -20, "consumerTrust": 10, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Guy Gal reflected on the siren song of disintermediation: every tech founder wants to cut out the middleman, but in real estate, the middleman controls the inventory. Going direct-to-consumer without agent cooperation means your listings dry up just as consumers start showing up.",
+          "revealSource": "Guy Gal — The Integrated Brokerage Bet"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-6",
+      "phase": 2,
+      "title": "Lead Quality Crisis",
+      "description": "Agents paying for your leads are complaining loudly: most leads are tire-kickers, wrong numbers, or people who already have an agent. Your reputation as a lead source is collapsing.",
+      "choices": [
+        {
+          "id": "portal-6-A",
+          "label": "Invest in Lead Scoring",
+          "description": "Build AI-powered lead qualification that filters out junk before it reaches agents. Expensive engineering investment, but it solves the core problem.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": 10, "consumerTrust": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Jeremy Wacksman described Zillow's massive investment in lead scoring and AI qualification as an existential necessity, not a nice-to-have. When agents are paying thousands a month for leads, delivering garbage connections is not just a product problem — it is a business-model threat that will eventually drive your best-paying customers to competitors.",
+          "revealSource": "Jeremy Wacksman — The Tech to Power the Industry"
+        },
+        {
+          "id": "portal-6-B",
+          "label": "Reduce Agent Count",
+          "description": "Fewer agents means each one gets more leads. Zillow cut from 100K to 50K Premier Agents. Better experience per agent, but you lose half your paying customers overnight.",
+          "effects": { "cash": -5, "revenue": -10, "agentRep": 10, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Gene Millman noted that Zillow's decision to cut its Premier Agent count in half was one of the gutsiest moves in proptech. Cutting revenue in the short term to improve quality is the kind of decision that terrifies Wall Street but earns long-term loyalty from the agents who remain.",
+          "revealSource": "Gene Millman — The SaaS Play in Real Estate"
+        },
+        {
+          "id": "portal-6-C",
+          "label": "Pivot to Referral Model",
+          "description": "Stop selling leads and instead refer pre-qualified consumers to agents for a referral fee at closing. Better alignment, but revenue is delayed and uncertain.",
+          "effects": { "cash": -5, "revenue": -5, "agentRep": 5, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Varun Krishna argued that the referral model is more honest about what portals actually deliver. Instead of selling a phone number and calling it a lead, you're saying: we will introduce you to a consumer who is ready, and we only get paid when the deal closes. The alignment is better, but your cash flow suffers.",
+          "revealSource": "Varun Krishna — How Do I Get You a Loan"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-7",
+      "phase": 2,
+      "title": "A Competitor With Unlimited Budget",
+      "description": "CoStar launches Homes.com backed by $3 billion in advertising spend. They're buying Super Bowl ads, poaching your talent, and promising agents a better deal. How do you respond?",
+      "choices": [
+        {
+          "id": "portal-7-A",
+          "label": "Compete Head-On",
+          "description": "Match their marketing spend dollar for dollar. Defend your market share with brand advertising and agent incentives. It will drain your cash reserves, but ceding ground could be fatal.",
+          "effects": { "cash": -25, "revenue": 0, "agentRep": 0, "consumerTrust": 5, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Lisa Farrar warned against getting into a spending war with a competitor who has deeper pockets. CoStar's Andy Florance has shown he will spend whatever it takes for as long as it takes. Matching that spend without matching that conviction is the fastest way to go bankrupt.",
+          "revealSource": "Lisa Farrar — Portals, Power, and the Consumer"
+        },
+        {
+          "id": "portal-7-B",
+          "label": "Differentiate Into a Niche",
+          "description": "Concede the mass market and focus on a segment you can dominate: luxury, rentals, new construction, or investor properties.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 5, "consumerTrust": 5, "marketShare": -1 },
+          "flags": { "addsAdjacency": "niche" },
+          "revealText": "Carrie Armstrong observed that niche portals often build stronger businesses than generalists because they can go deep on a specific consumer need. The tradeoff is that your addressable market shrinks, but your conversion rates and agent relationships improve dramatically.",
+          "revealSource": "Carrie Armstrong — The Portal Wars"
+        },
+        {
+          "id": "portal-7-C",
+          "label": "Ignore Them, Focus on Product",
+          "description": "Stay heads-down on product improvements and organic growth. Let CoStar burn their billions while you build a better mousetrap.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": -2 },
+          "flags": {},
+          "revealText": "David Mele cautioned that ignoring a well-funded competitor feels disciplined but can be fatal. Brand advertising works — not because it is efficient, but because it changes consumer behavior. The product-first company can win in theory, but in practice, the company with the most awareness gets the most searches.",
+          "revealSource": "David Mele — Building the Listing Engine"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-8",
+      "phase": 2,
+      "title": "The Adjacency Temptation",
+      "description": "Your portal has traffic and transaction data. The natural next step is to expand into adjacent services. But every adjacency carries risk.",
+      "choices": [
+        {
+          "id": "portal-8-A",
+          "label": "Expand Into Mortgage",
+          "description": "Launch a mortgage origination business to capture revenue when consumers finance their purchase. The attach rate is the challenge — getting consumers to actually use your lender.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": -5, "consumerTrust": 5, "marketShare": 1 },
+          "flags": { "addsAdjacency": "mortgage" },
+          "revealText": "Jun Choo described the mortgage adjacency as the most obvious and the most humbling expansion for portals. The economics look beautiful on paper, but the attach rate — the percentage of your search consumers who actually use your mortgage product — rarely exceeds twenty percent. And regulators add a whole new layer of complexity.",
+          "revealSource": "Jun Choo — Customer Problems First"
+        },
+        {
+          "id": "portal-8-B",
+          "label": "Launch iBuying",
+          "description": "Buy homes directly from sellers with instant offers. Zillow spent $1 billion learning this lesson. Massive capital requirements and pricing risk.",
+          "effects": { "cash": -30, "revenue": 10, "agentRep": -10, "consumerTrust": 5, "marketShare": 2 },
+          "flags": { "addsAdjacency": "ibuying" },
+          "revealText": "Jeremy Wacksman reflected candidly on Zillow's iBuying experience: the idea of giving sellers certainty and speed was right, but the execution required getting home pricing right at scale, and that turned out to be much harder than anyone expected. The billion-dollar write-down was a lesson the entire industry learned from.",
+          "revealSource": "Jeremy Wacksman — The Tech to Power the Industry"
+        },
+        {
+          "id": "portal-8-C",
+          "label": "Stay Focused on Search",
+          "description": "Resist the temptation. Keep improving your core search product and deepen your moat rather than spreading yourself thin across adjacent businesses.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Gene Millman argued that the best portals resist adjacency creep. Every new business line is a distraction from the core product, and in a winner-take-most market, the portal with the best search experience and the most listings wins. Adjacencies look like revenue diversification but feel like death by a thousand paper cuts.",
+          "revealSource": "Gene Millman — The SaaS Play in Real Estate"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-9",
+      "phase": 3,
+      "title": "Commission Lawsuits",
+      "description": "The NAR settlement has changed the rules of real estate commissions. Buyer-agent compensation is no longer guaranteed, and your portal's business model may need to adapt.",
+      "choices": [
+        {
+          "id": "portal-9-A",
+          "label": "Rebuild Around Buyer Agreements",
+          "description": "Redesign your platform to support the new world of buyer-agent agreements. Add tools for consumers to understand and negotiate compensation.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 5, "consumerTrust": 10, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Varun Krishna argued that the commission lawsuits represent the biggest structural change in residential real estate in decades. The portals who move first to help consumers understand the new compensation landscape will earn trust that lasts a generation. Waiting to see how it shakes out is a losing strategy.",
+          "revealSource": "Varun Krishna — How Do I Get You a Loan"
+        },
+        {
+          "id": "portal-9-B",
+          "label": "Wait and See",
+          "description": "The legal landscape is still shifting. Hold off on major changes until the dust settles. You might rebuild your model for a world that never arrives.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 0, "consumerTrust": -5, "marketShare": -1 },
+          "flags": {},
+          "revealText": "Carrie Armstrong warned that waiting for clarity on commission changes is a trap disguised as prudence. While you wait, faster-moving competitors are building the tools and relationships that will define the next era. By the time the dust settles, the land grab is already over.",
+          "revealSource": "Carrie Armstrong — The Portal Wars"
+        },
+        {
+          "id": "portal-9-C",
+          "label": "Lobby for Your Outcome",
+          "description": "Spend money on lobbying and industry influence to shape the regulatory outcome in your favor. Expensive, and you might end up on the wrong side of public opinion.",
+          "effects": { "cash": -15, "revenue": 0, "agentRep": -5, "consumerTrust": -10, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Lisa Farrar observed that lobbying in real estate is a dangerous game. The companies that spent millions trying to preserve the old commission structure ended up looking like they cared more about their revenue than about consumers. In the age of social media, that perception is devastating.",
+          "revealSource": "Lisa Farrar — Portals, Power, and the Consumer"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-10",
+      "phase": 3,
+      "title": "The Data War",
+      "description": "A major MLS is threatening to cut off your listing feed. They claim you're violating their terms of use, but really they want to launch their own consumer portal. This is an existential threat.",
+      "choices": [
+        {
+          "id": "portal-10-A",
+          "label": "Negotiate",
+          "description": "Pay whatever they want and agree to their terms. Your data supply is too important to lose, even if the cost is painful.",
+          "effects": { "cash": -20, "revenue": 0, "agentRep": 5, "consumerTrust": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Jeremy Wacksman described MLS negotiations as the most stressful part of running a portal. Every MLS knows they hold a card you cannot replace, and some use that leverage aggressively. But losing a major market's listings — even temporarily — can crater your consumer traffic in ways that take years to recover from.",
+          "revealSource": "Jeremy Wacksman — The Tech to Power the Industry"
+        },
+        {
+          "id": "portal-10-B",
+          "label": "Build Alternative Data",
+          "description": "Invest in building your own listing data through agent relationships, public records, and direct seller submissions. Reduce your MLS dependency.",
+          "effects": { "cash": -15, "revenue": 0, "agentRep": 5, "consumerTrust": -5, "marketShare": -1 },
+          "flags": {},
+          "revealText": "David Mele emphasized that no portal should be entirely dependent on a single data source. Building alternative data channels is expensive and slow, but it gives you negotiating leverage and insurance against exactly this kind of threat. The portals who survive long-term are the ones who own their data destiny.",
+          "revealSource": "David Mele — Building the Listing Engine"
+        },
+        {
+          "id": "portal-10-C",
+          "label": "Go Public and Shame Them",
+          "description": "Take the fight public. Blog posts, press releases, social media campaigns accusing the MLS of anticompetitive behavior. Risky, but it might force their hand.",
+          "effects": { "cash": -5, "revenue": 0, "agentRep": -10, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Guy Gal cautioned that going public with an MLS dispute is a nuclear option. You might win the PR battle, but MLSs have long memories. Every other MLS in the country is watching how you handle the conflict, and choosing aggression signals that you're willing to burn relationships when it suits you.",
+          "revealSource": "Guy Gal — The Integrated Brokerage Bet"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-11",
+      "phase": 3,
+      "title": "Product vs Distribution",
+      "description": "After years of building, your product is genuinely better — faster, cleaner, more accurate. But your traffic is still a fraction of the market leader. Being better isn't enough.",
+      "choices": [
+        {
+          "id": "portal-11-A",
+          "label": "Keep Building",
+          "description": "Stay the course. Redfin spent twenty years believing the best product would eventually win. Maybe it will. Maybe it won't.",
+          "effects": { "cash": -10, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Carrie Armstrong reflected on Redfin's twenty-year journey as both inspiring and cautionary. They built an objectively superior consumer experience and proved that better technology can survive — but surviving and winning are different things. Being the best product with four percent market share is a moral victory, not a business one.",
+          "revealSource": "Carrie Armstrong — The Portal Wars"
+        },
+        {
+          "id": "portal-11-B",
+          "label": "Pivot to SaaS Tools",
+          "description": "If you can't beat the traffic leader, sell your technology to agents and brokerages as software tools. Different business, different economics.",
+          "effects": { "cash": -5, "revenue": 10, "agentRep": 10, "consumerTrust": -5, "marketShare": -1 },
+          "flags": { "addsAdjacency": "saas" },
+          "revealText": "Gene Millman argued that the smartest move for a second-place portal is to stop trying to win a traffic war and start monetizing your technology. Agents and brokerages will pay for tools that make them better at their jobs, and SaaS revenue is more predictable than advertising. It is a smaller business but a more defensible one.",
+          "revealSource": "Gene Millman — The SaaS Play in Real Estate"
+        },
+        {
+          "id": "portal-11-C",
+          "label": "Partner With the Leader",
+          "description": "If you can't beat them, join them. Explore a strategic partnership or white-label deal with the traffic leader. You lose independence but gain distribution.",
+          "effects": { "cash": 5, "revenue": 5, "agentRep": 0, "consumerTrust": -5, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Lisa Farrar noted that partnerships between portals are rarely partnerships of equals. The company with less traffic always enters from a position of weakness, and the terms reflect that. But she also acknowledged that distribution solves problems that product quality alone never will.",
+          "revealSource": "Lisa Farrar — Portals, Power, and the Consumer"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "portal-12",
+      "phase": 3,
+      "title": "The Endgame",
+      "description": "The portal market is consolidating. You need to decide your company's future: grow through acquisition, accept an offer, or keep fighting.",
+      "choices": [
+        {
+          "id": "portal-12-A",
+          "label": "Acquire a Smaller Portal",
+          "description": "Buy a competitor to consolidate market share. Expensive, and integration is brutal, but you eliminate a rival and gain their traffic and listings.",
+          "effects": { "cash": -30, "revenue": 10, "agentRep": 0, "consumerTrust": 0, "marketShare": 5 },
+          "flags": {},
+          "revealText": "Jun Choo described portal acquisitions as deceptively complex. You are not just buying a website — you are buying data relationships, agent contracts, consumer habits, and technical debt. The companies that succeed at portal M&A are the ones who integrate ruthlessly and quickly. The ones who fail try to run both brands.",
+          "revealSource": "Jun Choo — Customer Problems First"
+        },
+        {
+          "id": "portal-12-B",
+          "label": "Accept an Acquisition Offer",
+          "description": "A larger company wants to buy you. Take the money and end the game. Your final score gets a multiplier based on the terms.",
+          "effects": { "cash": 40, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "endsGame": true, "scoreMultiplier": 1.5 },
+          "revealText": "Jeremy Wacksman observed that knowing when to sell is one of the hardest decisions a founder makes. Selling too early leaves money on the table; selling too late means you've already peaked. The best exits happen when the acquirer needs you more than you need them — and those windows are painfully short.",
+          "revealSource": "Jeremy Wacksman — The Tech to Power the Industry"
+        },
+        {
+          "id": "portal-12-C",
+          "label": "Keep Fighting Independently",
+          "description": "Reject acquisition offers and stay independent. Your costs will increase as competition intensifies, but you retain full control of your destiny.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 5, "consumerTrust": 5, "marketShare": 1 },
+          "flags": { "increaseBurnRate": 5 },
+          "revealText": "David Mele reflected that staying independent in a consolidating market is an act of faith. You are betting that your product, your team, and your strategy are good enough to survive against larger, better-funded competitors. Sometimes that bet pays off spectacularly. More often, it just means you sold later for less.",
+          "revealSource": "David Mele — Building the Listing Engine"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    }
+  ]
+}

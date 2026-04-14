@@ -1,0 +1,448 @@
+{
+  "decisions": [
+    {
+      "id": "infra-1",
+      "phase": 1,
+      "title": "What Layer Do You Own?",
+      "description": "Infrastructure companies do not sell homes — they build the systems that make selling homes possible. The layer you choose determines your customers, your competitors, and whether you are plumbing or platform.",
+      "choices": [
+        {
+          "id": "infra-1-A",
+          "label": "Transaction Management",
+          "description": "Build the system that manages documents, e-signatures, and compliance workflows for every real estate transaction. Dotloop's model: unglamorous but essential. Every deal needs your product, and switching costs are high.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 5, "consumerTrust": 0, "marketShare": 2 },
+          "flags": { "setsLayer": "transaction" },
+          "revealText": "Austin Allison built Dotloop because he saw agents drowning in paperwork and fax machines. The transaction layer is not exciting, but it touches every single deal. Once an agent's workflow runs through your system, they cannot easily leave — their entire transaction history, their templates, their compliance records are all inside your product. That stickiness is the moat.",
+          "revealSource": "Austin Allison — Building Dotloop"
+        },
+        {
+          "id": "infra-1-B",
+          "label": "Showing and Scheduling",
+          "description": "Coordinate the logistics of home showings — scheduling, access, feedback. ShowingTime's model: operationally critical but invisible to consumers. Agents use it dozens of times a day and barely think about it.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 10, "consumerTrust": 0, "marketShare": 2 },
+          "flags": { "setsLayer": "showing" },
+          "revealText": "Josh Team described ShowingTime as infrastructure that agents could not live without but never thought about. The product coordinated millions of showings per year, and agents used it reflexively — like turning on a light switch. That invisible ubiquity was ShowingTime's greatest strength and its greatest limitation: agents valued it deeply but would never pay a premium for it.",
+          "revealSource": "Josh Team — The ShowingTime Playbook"
+        },
+        {
+          "id": "infra-1-C",
+          "label": "Data and Analytics",
+          "description": "Build the data layer — MLS integration, market intelligence, property analytics. The most technically challenging path, but data is the foundation everything else is built on.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": 0, "consumerTrust": 5, "marketShare": 1 },
+          "flags": { "setsLayer": "data" },
+          "revealText": "Pritesh Damani explained that the data layer is the most powerful position in real estate infrastructure because every other product depends on it. Transaction management needs property data. Showing platforms need listing data. CRMs need contact and activity data. The company that controls the data layer can become the platform that everything else plugs into — or it can become the company that everyone routes around.",
+          "revealSource": "Pritesh Damani — Building Tech That Agents Actually Use"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-2",
+      "phase": 1,
+      "title": "How Do You Prove It Works?",
+      "description": "Infrastructure products live or die on adoption. You need to prove your product works in the real world before you can scale. How you earn that first proof point shapes your entire growth trajectory.",
+      "choices": [
+        {
+          "id": "infra-2-A",
+          "label": "One Office at a Time",
+          "description": "Pick a single large brokerage office and embed yourself until your product is indispensable. Do not leave until every agent in that office cannot imagine working without you. Then move to the next office.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 10, "consumerTrust": 0, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Austin Allison drove to Austin, Texas in a 1992 Saturn and did not leave until Dotloop worked in Keller Williams' biggest market center. He sat in the office, watched agents use the product, fixed bugs in real time, and earned their trust through sheer presence. That is how Dotloop won its first major customer — not through a sales pitch but through showing up and not leaving until it worked.",
+          "revealSource": "Austin Allison — Building Dotloop"
+        },
+        {
+          "id": "infra-2-B",
+          "label": "Go Wide Fast",
+          "description": "Build the infrastructure to support thousands of users from day one, then launch broadly. You sacrifice depth of relationship for speed of market coverage. If the product works, you win big. If it does not, you have no one to tell you why.",
+          "effects": { "cash": -15, "revenue": 0, "agentRep": -5, "consumerTrust": 0, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Pritesh Damani spent eight months in near-total isolation building infrastructure before letting anyone touch the product. Nobody was allowed to talk to him during that period because he needed uninterrupted time to build the foundation right. The gamble was enormous — eight months of zero feedback, zero revenue, and zero validation. When the product finally launched, the infrastructure was bulletproof, but the market had moved.",
+          "revealSource": "Pritesh Damani — Building Tech That Agents Actually Use"
+        },
+        {
+          "id": "infra-2-C",
+          "label": "Own the Data Layer First",
+          "description": "Before building any user-facing product, become the authoritative source of data. Connect the pipes, normalize the feeds, and make yourself the foundation that other products build on.",
+          "effects": { "cash": -10, "revenue": 0, "agentRep": 0, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Josh Team described the strategic power of connecting ShowingTime data with Zillow data with Dotloop data. Each product individually was useful, but connected together they tracked the entire ecosystem — from listing to showing to offer to close. The company that owns the data connections can see patterns that no individual product can see, and that visibility becomes the ultimate competitive advantage.",
+          "revealSource": "Josh Team — The ShowingTime Playbook"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-3",
+      "phase": 1,
+      "title": "Who's Your Buyer?",
+      "description": "Infrastructure products can sell to brokerages, to individual agents, or to MLSs. Each buyer type has radically different sales cycles, revenue models, and political dynamics.",
+      "choices": [
+        {
+          "id": "infra-3-A",
+          "label": "Enterprise Sales to Brokerages",
+          "description": "Sell to the brokerage as an organization. Big deals, long sales cycles, few customers. One enterprise contract can be worth thousands of individual agent subscriptions — but losing one customer can be catastrophic.",
+          "effects": { "cash": -5, "revenue": 10, "agentRep": 5, "consumerTrust": 0, "marketShare": 2 },
+          "flags": { "setsBuyerType": "enterprise" },
+          "revealText": "Scott Wright described enterprise brokerage sales as a relationship business disguised as a technology sale. The decision maker is often a broker-owner who has been in the industry for thirty years and trusts handshakes more than demos. You win enterprise deals by showing up, building trust, and proving you will be around in five years — not by having the best feature set.",
+          "revealSource": "Scott Wright — Selling to Brokerages"
+        },
+        {
+          "id": "infra-3-B",
+          "label": "Per-Seat SaaS to Agents",
+          "description": "Sell directly to individual agents on a monthly subscription. Small deals, high volume, constant churn. You need a self-serve product and a machine that acquires agents faster than they cancel.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 10, "consumerTrust": 0, "marketShare": 1 },
+          "flags": { "setsBuyerType": "agent" },
+          "revealText": "Dan Duffy observed that selling to individual agents is like filling a leaky bucket. Agents churn constantly — they switch tools, they leave the industry, they forget to use the product they are paying for. The companies that succeed with per-seat SaaS are the ones that build products so embedded in the agent's daily workflow that canceling would be like disconnecting their phone.",
+          "revealSource": "Dan Duffy — The Agent SaaS Challenge"
+        },
+        {
+          "id": "infra-3-C",
+          "label": "MLS Data Licensing",
+          "description": "License your product to MLSs, who distribute it to their members. Recurring revenue from a handful of institutional customers, but the sales cycle is measured in years and MLS politics can kill any deal.",
+          "effects": { "cash": 0, "revenue": 5, "agentRep": 0, "consumerTrust": 5, "marketShare": 1 },
+          "flags": { "setsBuyerType": "mls" },
+          "revealText": "Emily Girard explained that MLS sales are entirely political. The technology does not matter as much as who you know on the board, which committees you have relationships with, and whether the MLS CEO trusts you personally. A technically superior product will lose to an inferior product with better political relationships every single time. This is the one market where the best product does not always win.",
+          "revealSource": "Emily Girard — Navigating MLS Politics"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-4",
+      "phase": 1,
+      "title": "How Do You Fund This?",
+      "description": "Infrastructure businesses can be profitable early — the margins are good and the customers pay monthly. But capturing the market requires investment. How you fund determines your growth speed and your independence.",
+      "choices": [
+        {
+          "id": "infra-4-A",
+          "label": "Bootstrap from Revenue",
+          "description": "Fund everything from early customer revenue. No outside investors, no board, no clock. You grow at the pace your customers can fund. Tight on cash but you own every decision.",
+          "effects": { "cash": 0, "revenue": 5, "agentRep": 0, "consumerTrust": 5, "marketShare": 0 },
+          "flags": { "setsFundingPath": "bootstrap" },
+          "revealText": "Austin Allison bootstrapped Dotloop's early years from customer revenue, and the discipline that imposed was formative. Every feature had to justify itself in terms of retention or new revenue. There was no room for speculative investment or nice-to-have features. The constraint forced clarity of purpose that venture-funded competitors often lacked — they could afford to be unfocused, and they were.",
+          "revealSource": "Austin Allison — Building Dotloop"
+        },
+        {
+          "id": "infra-4-B",
+          "label": "Raise VC for Market Capture",
+          "description": "Take venture capital to grow faster than competitors. You get the resources to build enterprise sales teams, marketing, and engineering. But the clock starts, and your investors expect a big outcome.",
+          "effects": { "cash": 40, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsVentureClock": true, "setsFundingPath": "vc" },
+          "revealText": "Jeremy Hofmann cautioned that venture capital in infrastructure companies creates a specific tension: VCs expect hypergrowth, but infrastructure adoption is inherently slow. Agents adopt new tools gradually, brokerages switch systems once a decade, and MLSs move at geological speed. The VC timeline and the infrastructure adoption timeline are fundamentally mismatched.",
+          "revealSource": "Jeremy Hofmann — Infrastructure Funding"
+        },
+        {
+          "id": "infra-4-C",
+          "label": "Strategic Investment from a Brokerage",
+          "description": "Take investment from a major brokerage that becomes your anchor customer. You get cash and guaranteed distribution, but you become dependent on one company and their competitors may refuse to work with you.",
+          "effects": { "cash": 20, "revenue": 5, "agentRep": 5, "consumerTrust": 0, "marketShare": 1 },
+          "flags": { "setsFundingPath": "strategic" },
+          "revealText": "Chris Heller reflected on the strategic investor dilemma: a brokerage that invests in your company gives you instant credibility and distribution, but their competitors immediately view you as compromised. The anchor customer becomes both your biggest advantage and your biggest limitation. Every sales conversation starts with the question you dread: are you really independent or are you their tool?",
+          "revealSource": "Chris Heller — Strategic Partnerships"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-5",
+      "phase": 2,
+      "title": "Platform or Product?",
+      "description": "Your product is gaining traction. Now you face the classic infrastructure question: do you stay focused as a best-of-breed tool, or do you become a platform that other products build on?",
+      "choices": [
+        {
+          "id": "infra-5-A",
+          "label": "Stay Best-of-Breed",
+          "description": "Do one thing perfectly and resist the temptation to expand. Your product is focused, reliable, and easy to understand. Customers know exactly what they are buying. But you are vulnerable to platforms that bundle your functionality into a larger offering.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 10, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Jason Lytz argued that best-of-breed tools win in the short term because they solve one problem better than anyone else. But they lose in the long term because platforms bundle their functionality into a suite and sell it for free. The best-of-breed company has to be so much better at its one thing that customers will pay for it separately even when a free alternative is bundled with their existing platform.",
+          "revealSource": "Jason Lytz — Best-of-Breed vs. Platform"
+        },
+        {
+          "id": "infra-5-B",
+          "label": "Become a Platform",
+          "description": "Open APIs, build a developer ecosystem, and let third parties build on top of your infrastructure. Powerful and defensible if it works, but platforms are expensive to build and most fail because they cannot attract enough developers.",
+          "effects": { "cash": -20, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 3 },
+          "flags": {},
+          "revealText": "Hari Krishnan described the platform ambition as the most seductive and most dangerous strategy in proptech infrastructure. Everyone wants to be the platform, but platforms require a critical mass of developers and integrations to create value. Most companies that try to become platforms end up with an API that nobody uses and a product that has become too complex for its original customers.",
+          "revealSource": "Hari Krishnan — The Platform Trap"
+        },
+        {
+          "id": "infra-5-C",
+          "label": "Build a Connected Ecosystem",
+          "description": "The middle path: build a family of connected tools that work together but can also be sold individually. More complex than single-product but less risky than a full platform play. The integration burden is significant.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": 5, "consumerTrust": 0, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Josh Team described the connected ecosystem as the pragmatic path between product and platform. ShowingTime did not try to become a platform for all of real estate — it connected its showing data with listing data with transaction data to create insights that no individual product could generate. The ecosystem approach avoids the complexity of a full platform while capturing the value of connected data.",
+          "revealSource": "Josh Team — The ShowingTime Playbook"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-6",
+      "phase": 2,
+      "title": "MLS Politics",
+      "description": "A large MLS wants to white-label your product and distribute it to all their members. It is the biggest distribution opportunity you have ever seen — but it comes with strings attached.",
+      "choices": [
+        {
+          "id": "infra-6-A",
+          "label": "Accept the White-Label Deal",
+          "description": "Let the MLS rebrand your product as their own and distribute it to tens of thousands of agents. Incredible distribution, but you lose your brand, you become dependent on one customer, and if they drop you, you have nothing.",
+          "effects": { "cash": 10, "revenue": 10, "agentRep": -5, "consumerTrust": 0, "marketShare": 5 },
+          "flags": { "setsMLSDependency": true },
+          "revealText": "Emily Girard warned that white-label MLS deals are golden handcuffs. The distribution is intoxicating — overnight you go from hundreds of users to tens of thousands. But the agents do not know your name, the MLS controls the relationship, and when the contract comes up for renewal, you have zero leverage. You are a vendor, not a partner, and vendors are replaceable.",
+          "revealSource": "Emily Girard — Navigating MLS Politics"
+        },
+        {
+          "id": "infra-6-B",
+          "label": "Decline and Build Direct",
+          "description": "Turn down the MLS deal and build direct relationships with brokerages and agents. Slower and harder, but you keep your brand, your data, and your independence. Your sales team will need to work ten times harder.",
+          "effects": { "cash": -10, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Dan Duffy observed that the companies that declined MLS white-label deals often struggled for years but emerged stronger. They built direct relationships with agents who chose their product, which meant higher engagement, better feedback, and genuine brand loyalty. The MLS distribution shortcut skips all of that learning, and the learning is what makes the product good.",
+          "revealSource": "Dan Duffy — The Agent SaaS Challenge"
+        },
+        {
+          "id": "infra-6-C",
+          "label": "Negotiate Co-Branding",
+          "description": "Counter with a co-branding proposal: the MLS distributes your product, but your brand stays visible. You get most of the distribution with some of the brand equity. The MLS may accept, reject, or take months to decide.",
+          "effects": { "cash": 5, "revenue": 5, "agentRep": 0, "consumerTrust": 0, "marketShare": 3 },
+          "flags": {},
+          "revealText": "Scott Wright described co-branding negotiations with MLSs as an exercise in patience and political skill. The MLS wants to look innovative by offering a great tool. You want your name on it. The compromise — both brands visible — sounds simple but involves months of committee meetings, legal review, and political maneuvering. If you can endure the process, the result is a genuine partnership rather than a vendor relationship.",
+          "revealSource": "Scott Wright — Selling to Brokerages"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-7",
+      "phase": 2,
+      "title": "Acquisition Offer",
+      "description": "A major industry player wants to buy your company. Keller Williams bought Dotloop. Zillow bought ShowingTime. The offer is on the table. What do you do?",
+      "choices": [
+        {
+          "id": "infra-7-A",
+          "label": "Sell Now",
+          "description": "Accept the acquisition at a good valuation. Your team gets a landing spot, your investors get a return, and your product gets the resources of a much larger company. The game ends, but you win.",
+          "effects": { "cash": 20, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsGameEnd": "earlyAcquisition" },
+          "revealText": "Austin Allison sold Dotloop to Zillow and reflected on the decision with characteristic honesty. The product needed resources that a startup could not provide, and Zillow could take it to a scale that would have taken years independently. Selling is not failure — it is recognizing that the mission can be better served inside a larger organization than outside it.",
+          "revealSource": "Austin Allison — Building Dotloop"
+        },
+        {
+          "id": "infra-7-B",
+          "label": "Negotiate but Keep Building",
+          "description": "Engage in acquisition discussions but continue building the business. Use the offer as validation and motivation. The buyer might walk, but you might also negotiate a better price or decide you do not need to sell.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 0, "consumerTrust": 0, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Jeremy Hofmann noted that acquisition conversations are powerful leverage even if you never sell. The fact that a major player wants to buy you validates your market position, motivates your team, and scares your competitors. But the distraction cost is real — every hour your CEO spends in acquisition negotiations is an hour not spent on the product or customers.",
+          "revealSource": "Jeremy Hofmann — Infrastructure Funding"
+        },
+        {
+          "id": "infra-7-C",
+          "label": "Decline and Stay Independent",
+          "description": "Turn down the offer firmly and commit to building an independent company. You keep full control and full upside, but you also keep all the risk. The acquirer may become your competitor.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Chris Heller observed that the companies that decline acquisition offers make a bet that their independent value will exceed the offer price. Sometimes they are right — the company grows and the declined offer looks cheap in hindsight. But more often, the acquirer builds a competing product, and the independent company finds itself fighting a competitor with ten times its resources.",
+          "revealSource": "Chris Heller — Strategic Partnerships"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-8",
+      "phase": 2,
+      "title": "Agent Adoption Crisis",
+      "description": "Your tool has thirty percent adoption among agents who have access to it. The other seventy percent use their phones, email, and sticky notes. Your product is objectively better, but agents will not use it.",
+      "choices": [
+        {
+          "id": "infra-8-A",
+          "label": "Force Mandatory Adoption",
+          "description": "Work with brokerage leadership to make your tool mandatory for all transactions. Adoption spikes immediately, but agents resent being forced and will look for workarounds or switch brokerages.",
+          "effects": { "cash": 0, "revenue": 10, "agentRep": -15, "consumerTrust": 0, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Jason Lytz described mandatory adoption as the nuclear option. It works in the sense that usage numbers go up, but the quality of that usage is terrible. Agents who are forced to use a tool fill in the minimum required fields, skip optional features, and complain loudly to their broker. You end up with high adoption numbers and low actual value — the worst of both worlds.",
+          "revealSource": "Jason Lytz — Best-of-Breed vs. Platform"
+        },
+        {
+          "id": "infra-8-B",
+          "label": "Meet Agents Where They Are",
+          "description": "Stop trying to change agent behavior and build your product around how agents actually work. If they live on their phone, be a great mobile app. If they use email, integrate with email. Fit their workflow, do not fight it.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 10, "consumerTrust": 0, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Pritesh Damani delivered a hard truth about agent technology adoption: CRM is a personal thing, and it is a battle you cannot win by telling agents they are doing it wrong. The companies that succeed with agents are the ones that observe how agents actually work and build products that fit those behaviors. Agents will not change for your product — your product has to change for them.",
+          "revealSource": "Pritesh Damani — Building Tech That Agents Actually Use"
+        },
+        {
+          "id": "infra-8-C",
+          "label": "Simplify Radically",
+          "description": "Strip your product down to one core workflow that takes thirty seconds to complete. Remove features, remove options, remove complexity. Make the product so simple that not using it is harder than using it.",
+          "effects": { "cash": -5, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Hari Krishnan argued that most infrastructure products fail at adoption because they were built by engineers who love features. Every feature is a decision point, and every decision point is friction. The products that agents actually adopt are the ones that feel invisible — they do the work without asking the agent to think. If your product requires training, it has already failed the simplicity test.",
+          "revealSource": "Hari Krishnan — The Platform Trap"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-9",
+      "phase": 3,
+      "title": "Your Biggest Customer Becomes Your Competitor",
+      "description": "The brokerage that drove forty percent of your revenue is building their own version of your product. They have your playbook, your feature set, and your agent feedback. The clock is ticking.",
+      "choices": [
+        {
+          "id": "infra-9-A",
+          "label": "Out-Innovate Them",
+          "description": "Stay ahead technically. Ship features faster than their internal team can build. Your advantage is focus — they are building one tool among many. You are building the only tool that matters.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": 5, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Dan Duffy explained that internal brokerage tech teams are almost always slower than dedicated vendors. The brokerage has a hundred priorities and your product is one of them. You have one priority and it is the only thing you think about. The speed advantage is real, but it only works if you are genuinely innovating — if you are just maintaining, their internal team will eventually catch up.",
+          "revealSource": "Dan Duffy — The Agent SaaS Challenge"
+        },
+        {
+          "id": "infra-9-B",
+          "label": "Lock In with Switching Costs",
+          "description": "Make it painful to leave. Deepen integrations, store more data, create workflows that are impossible to replicate. Ethical if the value is real, but it feels like hostage-taking and damages trust.",
+          "effects": { "cash": -5, "revenue": 10, "agentRep": -10, "consumerTrust": -5, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Scott Wright described switching costs as the most effective and most morally ambiguous defense in infrastructure. When your product holds years of transaction history, compliance records, and workflow configurations, leaving is not just inconvenient — it is operationally dangerous. The brokerage knows this, which is why they are building their own version. The question is whether your lock-in buys you time to innovate or just delays the inevitable.",
+          "revealSource": "Scott Wright — Selling to Brokerages"
+        },
+        {
+          "id": "infra-9-C",
+          "label": "Diversify Your Customer Base",
+          "description": "Reduce dependency by aggressively selling to other brokerages and MLSs. If one customer can threaten your business, you have a customer concentration problem, not a competitor problem.",
+          "effects": { "cash": -10, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Emily Girard emphasized that customer concentration is the silent killer of infrastructure companies. When forty percent of your revenue comes from one customer, you do not have a business — you have a contract. Diversifying takes time and money, but it transforms you from a dependent vendor into an independent company. The day your largest customer represents less than fifteen percent of revenue is the day you are actually safe.",
+          "revealSource": "Emily Girard — Navigating MLS Politics"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-10",
+      "phase": 3,
+      "title": "Data Ownership War",
+      "description": "Billions of data points flow through your system every year — transaction data, showing data, pricing data, agent performance data. Who owns it? This question will define the next decade of your company.",
+      "choices": [
+        {
+          "id": "infra-10-A",
+          "label": "Assert Ownership and Monetize",
+          "description": "Claim the data flowing through your system and build analytics products on top of it. Lucrative and defensible, but agents and brokerages will accuse you of stealing their data and the political backlash could be severe.",
+          "effects": { "cash": 5, "revenue": 15, "agentRep": -15, "consumerTrust": -10, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Hari Krishnan described data monetization as the most lucrative and most politically explosive strategy in real estate infrastructure. The data that flows through your system — showing times, offer patterns, pricing trends — is enormously valuable. But the agents and brokerages who generated that data consider it theirs, and using it without explicit consent will trigger a backlash that can destroy decades of trust in months.",
+          "revealSource": "Hari Krishnan — The Platform Trap"
+        },
+        {
+          "id": "infra-10-B",
+          "label": "Stay Neutral — Data Belongs to Customers",
+          "description": "Take the position that all data belongs to the customers who generated it. You are a trusted custodian, not an owner. Safe and relationship-preserving, but you miss the enormous revenue opportunity sitting in your database.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 10, "consumerTrust": 10, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Chris Heller argued that data neutrality is the only sustainable position for infrastructure companies that want to serve the entire industry. The moment you monetize customer data, you become a competitor to the people paying you. Trust is the only moat that matters in infrastructure, and data monetization destroys trust faster than any product failure or service outage.",
+          "revealSource": "Chris Heller — Strategic Partnerships"
+        },
+        {
+          "id": "infra-10-C",
+          "label": "Partner to Create Shared Standards",
+          "description": "Work with MLSs and brokerages to create shared data standards that benefit everyone. You become the neutral party that connects data streams across the industry. Slower and less profitable, but it positions you as essential infrastructure.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 5, "consumerTrust": 5, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Josh Team described connecting data streams across real estate as the game — the strategic endgame that creates the most value for the entire ecosystem. When showing data connects to listing data connects to transaction data, everyone benefits. The company that facilitates those connections does not need to own the data — it just needs to be the trusted bridge that makes the data useful.",
+          "revealSource": "Josh Team — The ShowingTime Playbook"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-11",
+      "phase": 3,
+      "title": "Vertical Integration Pressure",
+      "description": "Your infrastructure product touches every transaction. The temptation to move from tools into transactions — from plumbing into the business running on the plumbing — is enormous. But doing so means competing with your own customers.",
+      "choices": [
+        {
+          "id": "infra-11-A",
+          "label": "Move Into Transactions",
+          "description": "Use your infrastructure position to enter the transaction business. Huge revenue potential — you already see every deal — but you instantly become a competitor to the brokerages and agents who are your customers.",
+          "effects": { "cash": -10, "revenue": 10, "agentRep": -20, "consumerTrust": 5, "marketShare": 3 },
+          "flags": {},
+          "revealText": "Jeremy Hofmann described vertical integration as the most tempting and most destructive move an infrastructure company can make. Your infrastructure touches every transaction, so you see exactly where the money is. The urge to capture that revenue is almost irresistible. But the moment you start competing with your customers, they start looking for an alternative to your infrastructure — and they will find one.",
+          "revealSource": "Jeremy Hofmann — Infrastructure Funding"
+        },
+        {
+          "id": "infra-11-B",
+          "label": "Stay In Your Lane",
+          "description": "Resist the temptation and remain a trusted infrastructure provider. Your total addressable market is smaller, but your customers trust you because you are not competing with them. That trust is your moat.",
+          "effects": { "cash": 0, "revenue": 5, "agentRep": 10, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Jason Lytz argued that the infrastructure companies that stay focused outlast the ones that chase transactions. The transaction business looks lucrative from the outside, but it comes with all the costs, risks, and complexity of running a brokerage. Infrastructure margins are better, the revenue is more predictable, and your customers are your allies instead of your adversaries. The boring path is the profitable path.",
+          "revealSource": "Jason Lytz — Best-of-Breed vs. Platform"
+        },
+        {
+          "id": "infra-11-C",
+          "label": "Build a Marketplace Layer",
+          "description": "Instead of becoming a brokerage, build a marketplace that connects buyers and sellers through your platform. You facilitate transactions without representing either side. The distinction is subtle but critical.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": -5, "consumerTrust": 10, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Dan Duffy observed that the marketplace model is the compromise that nobody loves but everybody can live with. You are not competing with agents — you are connecting consumers to agents through your platform. Agents tolerate it because you are sending them business. Consumers like it because you simplify the process. But the margins are thin and the execution is complex because you are building a two-sided marketplace inside an existing industry.",
+          "revealSource": "Dan Duffy — The Agent SaaS Challenge"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "infra-12",
+      "phase": 3,
+      "title": "The Endgame",
+      "description": "You have built essential infrastructure that the industry depends on. Now you face the final question: what is the ultimate destination for this company?",
+      "choices": [
+        {
+          "id": "infra-12-A",
+          "label": "Get Acquired by an Industry Giant",
+          "description": "Sell to Zillow, CoStar, or a major brokerage. Your product gets the resources and distribution of a billion-dollar company. The game ends, and your score reflects the strategic value you created.",
+          "effects": { "cash": 25, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsGameEnd": "acquisition" },
+          "revealText": "Josh Team watched Zillow acquire ShowingTime and recognized the inevitability of it. Infrastructure companies that become essential to the ecosystem attract acquirers the way gravity attracts mass. The question is not whether someone will try to buy you but whether you will get a price that reflects your strategic value. ShowingTime's data, when combined with Zillow's platform, created something neither company could build alone.",
+          "revealSource": "Josh Team — The ShowingTime Playbook"
+        },
+        {
+          "id": "infra-12-B",
+          "label": "Go Public",
+          "description": "IPO and continue building as a public company. You get access to public markets capital and a liquid currency for acquisitions. But quarterly earnings pressure changes how you make decisions — Wall Street does not reward patience.",
+          "effects": { "cash": 15, "revenue": 0, "agentRep": 0, "consumerTrust": 5, "marketShare": 1 },
+          "flags": { "setsGameEnd": "ipo" },
+          "revealText": "Hari Krishnan noted that public infrastructure companies face a specific version of the quarterly pressure problem. Wall Street wants growth, but infrastructure adoption is slow and steady. The market rewards hockey-stick revenue curves, not the gradual, compounding growth that characterizes great infrastructure businesses. Going public means explaining to analysts every quarter why slow and steady wins the race.",
+          "revealSource": "Hari Krishnan — The Platform Trap"
+        },
+        {
+          "id": "infra-12-C",
+          "label": "Stay Independent and Profitable",
+          "description": "Neither sell nor go public. Build a profitable, independent company that generates cash and grows at its own pace. Lower growth, higher margins, and complete control over your destiny.",
+          "effects": { "cash": 5, "revenue": 10, "agentRep": 5, "consumerTrust": 5, "marketShare": 0 },
+          "flags": { "setsGameEnd": "independent" },
+          "revealText": "Scott Wright argued that the best infrastructure companies are the ones nobody talks about — profitable, independent, essential, and boring. They do not make headlines, they do not raise rounds, and they do not get acquired for flashy multiples. They just collect monthly subscriptions from customers who cannot live without them, and they grow steadily for decades. In proptech, boring is the ultimate competitive advantage.",
+          "revealSource": "Scott Wright — Selling to Brokerages"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    }
+  ]
+}

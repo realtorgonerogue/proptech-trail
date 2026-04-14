@@ -1,0 +1,457 @@
+{
+  "decisions": [
+    {
+      "id": "brokerage-1",
+      "phase": 1,
+      "title": "What's Your Agent Model?",
+      "description": "The most fundamental choice in building a brokerage: what is the legal and economic relationship between your company and your agents? This decision shapes everything that follows.",
+      "choices": [
+        {
+          "id": "brokerage-1-A",
+          "label": "W-2 Employees",
+          "description": "Hire agents as salaried employees like Redfin. You get control, consistency, and training leverage — but you carry payroll risk in downturns and agents chafe at being told what to do.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": -5, "consumerTrust": 10, "marketShare": 1 },
+          "flags": { "setsFlexRisk": true, "setsAgentModel": "w2" },
+          "revealText": "Robert Reffkin explained why Compass chose not to go the W-2 route: agents are entrepreneurs who want freedom, not a boss. The W-2 model delivers consistency for consumers but creates a fixed-cost structure that becomes devastating in a downturn. When volume drops forty percent, your payroll does not.",
+          "revealSource": "Robert Reffkin — Coffee, Compass, and Culture"
+        },
+        {
+          "id": "brokerage-1-B",
+          "label": "1099 Contractors",
+          "description": "The traditional model: agents are independent contractors who keep most of their commission. You scale fast and carry no payroll risk, but you have minimal control over quality or behavior.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 10, "consumerTrust": -5, "marketShare": 1 },
+          "flags": { "setsAgentModel": "1099" },
+          "revealText": "Glenn Sanford built eXp Realty entirely on the 1099 model and took it further than anyone imagined. Independent contractors who work from anywhere, recruit their own teams, and build equity in the company. The lack of control is a feature, not a bug — agents who feel free are agents who stay.",
+          "revealSource": "Glenn Sanford — The Cloud Brokerage"
+        },
+        {
+          "id": "brokerage-1-C",
+          "label": "Agent-as-Brand",
+          "description": "The Side model: agents keep their own brand, their own identity, their own clients. You provide back-office infrastructure, compliance, and technology. You're invisible to the consumer.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 10, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsAgentModel": "agentBrand" },
+          "revealText": "Guy Gal at Side recognized that top-producing agents do not want to work under someone else's brand — they want to be the brand. Side's model lets agents build their own identity while Side handles compliance, technology, and operations behind the scenes. The tradeoff is that consumers never hear of Side, which makes consumer marketing nearly impossible.",
+          "revealSource": "Guy Gal — The Integrated Brokerage Bet"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-2",
+      "phase": 1,
+      "title": "What's Your Value Prop?",
+      "description": "Why should an agent leave their current brokerage for yours? You need a clear, compelling answer that resonates with the agents you want to attract.",
+      "choices": [
+        {
+          "id": "brokerage-2-A",
+          "label": "Superior Technology",
+          "description": "Build a technology platform so good that agents cannot imagine working without it. Compass spent $1.5 billion on this bet. The tools better be extraordinary.",
+          "effects": { "cash": -20, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Pritesh Damani at Compass reflected on the challenge of spending one and a half billion dollars on technology and still struggling with agent adoption. The tools have to be genuinely better, not just different. And even then, agents will only use technology that saves them time on their very next transaction — not theoretical future value.",
+          "revealSource": "Pritesh Damani — Building Tech That Agents Actually Use"
+        },
+        {
+          "id": "brokerage-2-B",
+          "label": "Better Economics",
+          "description": "Offer agents a better split than they're getting now. Real Brokerage grew 635% by giving agents more of their own commission. Simple, compelling, and hard to argue with.",
+          "effects": { "cash": -5, "revenue": -5, "agentRep": 10, "consumerTrust": 0, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Tamir Poleg at Real Brokerage proved that economics is the most powerful recruiting tool in real estate. When you offer agents significantly better splits, they do the math and move. Real grew from a few hundred agents to over twenty thousand by letting agents keep more of what they earn. The challenge is building a sustainable business on thinner margins.",
+          "revealSource": "Tamir Poleg — The Real Brokerage Model"
+        },
+        {
+          "id": "brokerage-2-C",
+          "label": "Equity Ownership",
+          "description": "Give agents stock in the company so they're building wealth, not just earning commissions. eXp pioneered this: agents as shareholders, not just contractors.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 10, "consumerTrust": 0, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Glenn Sanford's genius at eXp was recognizing that agents who own stock in the brokerage behave differently than agents who just collect commissions. They recruit, they retain, they evangelize. The equity model turned agents into a distributed sales force for the brokerage itself — not just for homes.",
+          "revealSource": "Glenn Sanford — The Cloud Brokerage"
+        },
+        {
+          "id": "brokerage-2-D",
+          "label": "Brand Independence",
+          "description": "Promise agents they can keep their own brand and identity. You handle the boring stuff — compliance, accounting, tech — while they stay the face of their business.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 10, "consumerTrust": -5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Steve Capezza noted that the most productive agents often have stronger personal brands than any brokerage. Letting them keep that identity is not just a recruiting tool — it acknowledges the reality that in real estate, the agent is the brand. The brokerage that tries to override that is fighting human nature.",
+          "revealSource": "Steve Capezza — Agent Brands and Brokerage Identity"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-3",
+      "phase": 1,
+      "title": "How Do You Recruit?",
+      "description": "Agents are your product, your revenue, and your growth engine. How you find and attract them determines your growth curve and your cost structure.",
+      "choices": [
+        {
+          "id": "brokerage-3-A",
+          "label": "Enterprise Outbound",
+          "description": "Hire dedicated recruiters who call, pitch, and close agents one by one. The Compass playbook: expensive but fast. Each recruiter costs six figures and delivers dozens of agents.",
+          "effects": { "cash": -20, "revenue": 5, "agentRep": 5, "consumerTrust": 0, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Robert Reffkin built Compass's recruiting machine by hiring hundreds of dedicated recruiters and deploying them like a sales organization. The cost was enormous, but the speed was unmatched. Reffkin would personally call top agents and ask two questions: what would make you come, and what would make you stay away. Then he built exactly that.",
+          "revealSource": "Robert Reffkin — Coffee, Compass, and Culture"
+        },
+        {
+          "id": "brokerage-3-B",
+          "label": "Agent-as-Affiliate",
+          "description": "Let existing agents recruit new ones through revenue sharing. Real Brokerage's model: cheap, viral, and it grew them 635%. But you attract agents motivated by recruiting, not selling.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 5, "consumerTrust": -5, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Tamir Poleg described Real's agent-affiliate model as the most capital-efficient growth engine in brokerage history. Agents who recruit other agents create a self-reinforcing cycle that costs almost nothing in marketing. The risk is that you attract recruiters rather than producers — agents who are better at signing up new agents than selling homes.",
+          "revealSource": "Tamir Poleg — The Real Brokerage Model"
+        },
+        {
+          "id": "brokerage-3-C",
+          "label": "Digital Inbound",
+          "description": "Build a brand and let agents come to you. Content marketing, social media, webinars. Moderate cost, moderate speed, and you attract agents who already want what you offer.",
+          "effects": { "cash": -10, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Wendy Forsythe argued that inbound recruiting attracts a higher-quality agent because they have already self-selected. They have researched your value proposition, compared you to alternatives, and decided you are worth exploring. The conversion rate is higher and the retention is better, even if the volume is lower than outbound.",
+          "revealSource": "Wendy Forsythe — Scaling Agent Recruitment"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-4",
+      "phase": 1,
+      "title": "How Do You Fund This?",
+      "description": "Brokerages are people businesses with thin margins. Your funding strategy determines whether you can recruit fast, invest in technology, and survive the inevitable downturns.",
+      "choices": [
+        {
+          "id": "brokerage-4-A",
+          "label": "Raise Billions in VC",
+          "description": "The Compass route: raise massive venture capital to subsidize agent recruiting and technology investment. You'll move faster than anyone, but the venture clock starts ticking toward an exit.",
+          "effects": { "cash": 60, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsVentureClock": true },
+          "revealText": "Robert Reffkin raised billions for Compass and used it to recruit agents at a pace no competitor could match. But Leo Pareja observed that venture-backed brokerages face a fundamental tension: the investors expect tech-company returns from a business with real-estate-company margins. That gap between expectation and reality has destroyed more proptech companies than any competitor.",
+          "revealSource": "Leo Pareja — The Brokerage Economics Problem"
+        },
+        {
+          "id": "brokerage-4-B",
+          "label": "Go Public at Tiny Valuation",
+          "description": "IPO early at a small valuation, like eXp and Real did. You get a public currency for agent equity programs and acquisition financing, but Wall Street scrutiny begins immediately.",
+          "effects": { "cash": 25, "revenue": 0, "agentRep": 5, "consumerTrust": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Glenn Sanford took eXp public specifically so agents could receive publicly traded stock as part of their compensation. The listing at a tiny valuation was not about raising capital — it was about creating a liquid equity currency that made agent stock grants real and tangible, not just paper promises.",
+          "revealSource": "Glenn Sanford — The Cloud Brokerage"
+        },
+        {
+          "id": "brokerage-4-C",
+          "label": "Bootstrap From Commissions",
+          "description": "Fund the business from transaction revenue. No outside money, no outside pressure. You'll grow slowly, but every decision is yours.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Orly Ripmaster built a brokerage without outside capital by reinvesting every commission dollar into growth. The discipline required is extraordinary — you say no to opportunities constantly because you cannot afford the risk. But the business you build is genuinely yours, and that patience compounds into resilience that venture-backed competitors cannot replicate.",
+          "revealSource": "Orly Ripmaster — Building Without Outside Capital"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-5",
+      "phase": 2,
+      "title": "Do Agents Need Offices?",
+      "description": "Your agent count is growing and the question of physical space is becoming urgent. Offices are expensive but some agents expect them. What's your real estate strategy for a real estate company?",
+      "choices": [
+        {
+          "id": "brokerage-5-A",
+          "label": "Open Physical Offices",
+          "description": "Lease premium office space in every market you enter. Agents expect a professional space to meet clients and collaborate. Compass leased hundreds of offices nationwide.",
+          "effects": { "cash": -20, "revenue": 0, "agentRep": 5, "consumerTrust": 10, "marketShare": 1 },
+          "flags": { "setsFlexRisk": true },
+          "revealText": "Robert Reffkin believed that beautiful offices were a recruiting tool — agents who walked into a Compass office felt they were joining something premium. But Sean Soderstrom pointed out the cruel irony: a real estate company spending tens of millions on real estate leases creates a fixed-cost burden that amplifies every market downturn.",
+          "revealSource": "Sean Soderstrom — The Office Question"
+        },
+        {
+          "id": "brokerage-5-B",
+          "label": "Fully Virtual",
+          "description": "No offices at all. eXp built the largest independent brokerage in the world using a virtual world platform. Cheap, infinitely scalable, but some agents feel isolated and unconnected.",
+          "effects": { "cash": 5, "revenue": 0, "agentRep": -5, "consumerTrust": -5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Glenn Sanford proved with eXp that agents do not need physical offices to be productive. The cloud brokerage model eliminated the single largest fixed cost in the traditional brokerage. But Sam Sawyer noted that some agents — especially newer ones — struggle without the mentorship and community that in-person spaces naturally create.",
+          "revealSource": "Sam Sawyer — Culture in a Virtual Brokerage"
+        },
+        {
+          "id": "brokerage-5-C",
+          "label": "Coworking Cards",
+          "description": "Give agents access to coworking spaces like WeWork instead of maintaining your own offices. Cheap, flexible, and agents love the idea — even if most never actually use the card.",
+          "effects": { "cash": -5, "revenue": 0, "agentRep": 5, "consumerTrust": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Joe Rath discovered that coworking memberships were the perfect middle ground: agents loved having the option of a professional space, and the usage rates were low enough that the cost was manageable. He observed that agents loved the card and almost never used it — which made it the cheapest perk with the highest perceived value.",
+          "revealSource": "Joe Rath — The Coworking Compromise"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-6",
+      "phase": 2,
+      "title": "Agent Quality Is Dropping",
+      "description": "Your aggressive recruiting has worked — agent count is up. But average production per agent is falling. You're attracting part-timers and hobbyists who close one or two deals a year.",
+      "choices": [
+        {
+          "id": "brokerage-6-A",
+          "label": "Let the Market Sort It Out",
+          "description": "Low-producers will eventually leave on their own. In the meantime, they add to your market share numbers and pay desk fees. Volume over quality.",
+          "effects": { "cash": 5, "revenue": 5, "agentRep": -5, "consumerTrust": -10, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Sam Sawyer warned that letting low-producers linger destroys your brand from the inside. Every bad consumer experience from an undertrained agent reflects on your brokerage. The market does eventually sort it out, but the reputational damage accumulates faster than the attrition can repair it.",
+          "revealSource": "Sam Sawyer — Culture in a Virtual Brokerage"
+        },
+        {
+          "id": "brokerage-6-B",
+          "label": "Set Minimum Standards",
+          "description": "Require agents to close a minimum number of transactions or leave. Painful to implement — you'll lose agents and revenue in the short term — but your quality improves dramatically.",
+          "effects": { "cash": -5, "revenue": -5, "agentRep": -5, "consumerTrust": 10, "marketShare": -1 },
+          "flags": {},
+          "revealText": "Leo Pareja argued that setting production minimums is the single hardest decision a brokerage leader makes. You are telling agents — people who are theoretically your customers — that they are not good enough to stay. But the brokerages that have done it consistently report that the agents who remain are happier, more productive, and more loyal.",
+          "revealSource": "Leo Pareja — The Brokerage Economics Problem"
+        },
+        {
+          "id": "brokerage-6-C",
+          "label": "Create Tiered Programs",
+          "description": "Build different tiers: high-producers get premium support and better splits, low-producers get a basic package. Everyone stays, but the best agents feel recognized.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 5, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Wendy Forsythe observed that tiered programs sound like a clean compromise but are operationally complex. You end up running two or three brokerages inside one company, each with different economics and different expectations. The best agents appreciate the distinction, but the mid-tier agents feel they are being sorted into a lesser class.",
+          "revealSource": "Wendy Forsythe — Scaling Agent Recruitment"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-7",
+      "phase": 2,
+      "title": "Are You a Tech Company?",
+      "description": "Every brokerage claims to be a tech company. But how much should you actually invest in proprietary technology? The answer determines your cost structure and your competitive positioning.",
+      "choices": [
+        {
+          "id": "brokerage-7-A",
+          "label": "Build Everything In-House",
+          "description": "CRM, transaction management, marketing tools, analytics — build it all yourself like Compass spent $1.5 billion doing. Full control, but the engineering costs are staggering.",
+          "effects": { "cash": -25, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Pritesh Damani reflected on Compass's technology investment with hard-won clarity: building everything in-house gives you control and differentiation, but the adoption problem is brutal. Agents use technology that saves them time today, not platforms that might be powerful tomorrow. If you cannot honestly use the word simple to describe your tools, you will fail at adoption.",
+          "revealSource": "Pritesh Damani — Building Tech That Agents Actually Use"
+        },
+        {
+          "id": "brokerage-7-B",
+          "label": "Integrate Best-of-Breed",
+          "description": "Partner with the best vendors in each category and integrate their tools into a cohesive agent experience. Cheaper than building, but you're dependent on partners and your experience is only as good as their weakest product.",
+          "effects": { "cash": -10, "revenue": 0, "agentRep": 5, "consumerTrust": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Tamir Poleg at Real chose the integration path deliberately. He argued that no brokerage will ever build better CRM software than Salesforce or better marketing tools than dedicated martech companies. The job of a brokerage is to curate and connect the best tools, not to reinvent them. The savings are enormous and the agent experience is often better.",
+          "revealSource": "Tamir Poleg — The Real Brokerage Model"
+        },
+        {
+          "id": "brokerage-7-C",
+          "label": "Keep It Simple",
+          "description": "Minimal tech investment. Give agents a clean transaction management system and let them choose their own tools for everything else. The cheapest path, and agents who want simplicity will love it.",
+          "effects": { "cash": -5, "revenue": 0, "agentRep": 5, "consumerTrust": -5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Steve Capezza delivered a blunt assessment of brokerage technology: most agents use three tools — their phone, their email, and their MLS. Everything else is nice-to-have that most agents ignore. The brokerages that keep technology simple and reliable beat the ones that build complex platforms no one logs into.",
+          "revealSource": "Steve Capezza — Agent Brands and Brokerage Identity"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-8",
+      "phase": 2,
+      "title": "Market Downturn Hits",
+      "description": "Interest rates spike, transaction volume drops forty percent, and your revenue collapses. Your agent model determines your options — and your pain.",
+      "choices": [
+        {
+          "id": "brokerage-8-A",
+          "label": "Layoff and Restructure",
+          "description": "If you have W-2 employees: cut sixty percent of your workforce to survive. Cash improves immediately but your reputation as an employer is destroyed. If you have 1099 agents: they leave for better splits elsewhere.",
+          "effects": { "cash": 10, "revenue": -10, "agentRep": -20, "consumerTrust": -10, "marketShare": -3 },
+          "flags": {},
+          "revealText": "Robert Reffkin faced this exact dilemma when Compass laid off a significant portion of its staff during the 2022 downturn. He had preached culture and loyalty, and then market reality forced mass layoffs. The reputational damage was severe — agents who were told they were family learned they were costs on a spreadsheet.",
+          "revealSource": "Robert Reffkin — Coffee, Compass, and Culture"
+        },
+        {
+          "id": "brokerage-8-B",
+          "label": "Hold the Line",
+          "description": "Keep your team intact through the downturn. Burn cash to preserve relationships and loyalty. When the market recovers, you'll be fully staffed while competitors scramble to rebuild.",
+          "effects": { "cash": -20, "revenue": -5, "agentRep": 10, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Leo Pareja argued that the brokerages who hold their people through downturns earn a loyalty dividend that compounds for years. Agents remember who stood by them when times were hard. But he also acknowledged the math is brutal — every month you hold the line, your runway gets shorter, and the market does not care about your good intentions.",
+          "revealSource": "Leo Pareja — The Brokerage Economics Problem"
+        },
+        {
+          "id": "brokerage-8-C",
+          "label": "Offer Equity to Retain",
+          "description": "If agents are leaving for better economics, offer them stock or equity incentives to stay. You dilute ownership but keep your talent base intact through the storm.",
+          "effects": { "cash": -5, "revenue": -5, "agentRep": 10, "consumerTrust": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Glenn Sanford noted that eXp's equity model provided natural insulation during downturns. When agents own stock, they have a reason to stay even when commissions drop — they are building long-term wealth, not just collecting a paycheck. The companies that only offered cash compensation had nothing to fall back on when cash got tight.",
+          "revealSource": "Glenn Sanford — The Cloud Brokerage"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-9",
+      "phase": 3,
+      "title": "Culture vs Growth",
+      "description": "You've survived the early years. Now the question is how to scale without losing what makes your brokerage special. Growth and culture pull in opposite directions.",
+      "choices": [
+        {
+          "id": "brokerage-9-A",
+          "label": "Grow Deliberately",
+          "description": "Prioritize culture and agent experience over speed. Grow market by market, ensuring each office embodies your values before opening the next. Slow but sustainable.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 10, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Robert Reffkin preached deliberate growth — building culture in each market before moving to the next. But the irony is that Compass itself grew through rapid acquisition, buying over twenty brokerages in a few years. The tension between what Reffkin said and what Compass did illustrates how hard it is to resist the land-grab temptation when investors are pushing.",
+          "revealSource": "Robert Reffkin — Coffee, Compass, and Culture"
+        },
+        {
+          "id": "brokerage-9-B",
+          "label": "Land-Grab Acquisitions",
+          "description": "Buy competitors to grow fast. Compass acquired over twenty brokerages in rapid succession. Instant market share, but integrating different cultures is brutal and expensive.",
+          "effects": { "cash": -25, "revenue": 10, "agentRep": -10, "consumerTrust": 0, "marketShare": 5 },
+          "flags": {},
+          "revealText": "Sean Soderstrom observed that brokerage acquisitions fail at an alarming rate because the product is people. When you buy a brokerage, you are buying agent relationships — and those agents can walk out the door tomorrow. The acquirers who succeed are the ones who integrate culture first and systems second. The ones who fail do the opposite.",
+          "revealSource": "Sean Soderstrom — The Office Question"
+        },
+        {
+          "id": "brokerage-9-C",
+          "label": "Equity Alignment",
+          "description": "Use stock grants and revenue sharing to make agents feel like owners. eXp's model: agents who recruit and produce earn equity, aligning their success with the company's.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 10, "consumerTrust": 0, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Glenn Sanford argued that equity alignment is the only scalable culture strategy. You cannot enforce culture through memos and mission statements. But when agents own stock in the company, they naturally protect and promote the culture because their wealth depends on the company's reputation. Ownership creates alignment that management never can.",
+          "revealSource": "Glenn Sanford — The Cloud Brokerage"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-10",
+      "phase": 3,
+      "title": "Mortgage Expansion",
+      "description": "Your mortgage attach rate is stuck at eighteen percent. Most agents use their own preferred lenders instead of your in-house mortgage product. How do you move the needle?",
+      "choices": [
+        {
+          "id": "brokerage-10-A",
+          "label": "Carrots: Reward Attachment",
+          "description": "Offer agents bonuses, better splits, or other incentives when their clients use your mortgage product. Gentle persuasion that agents appreciate, but the revenue lift is modest.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 5, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "addsAdjacency": "mortgage" },
+          "revealText": "Orly Ripmaster found that carrot-based mortgage incentives move the needle slowly but sustainably. Agents who feel rewarded for using in-house mortgage become advocates, not hostages. The attach rate creeps up over time, and the agents who use it tend to be your most loyal and productive.",
+          "revealSource": "Orly Ripmaster — Building Without Outside Capital"
+        },
+        {
+          "id": "brokerage-10-B",
+          "label": "Sticks: Require for Leads",
+          "description": "Make using your mortgage product a condition for receiving company-generated leads. Aggressive, and agents will resent the mandate, but attach rates will jump immediately.",
+          "effects": { "cash": 0, "revenue": 10, "agentRep": -15, "consumerTrust": -5, "marketShare": 0 },
+          "flags": { "addsAdjacency": "mortgage" },
+          "revealText": "Joe Rath warned that mandatory mortgage attachment creates resentment that leaks into everything. Agents who feel forced to use your lender start questioning every other aspect of the relationship. You get the attach rate, but you lose trust — and in a brokerage, trust is the only thing you actually sell.",
+          "revealSource": "Joe Rath — The Coworking Compromise"
+        },
+        {
+          "id": "brokerage-10-C",
+          "label": "Fix the Product",
+          "description": "Invest in making your mortgage product so fast, easy, and competitively priced that agents choose it voluntarily. Expensive and uncertain, but the right long-term answer.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": 5, "consumerTrust": 5, "marketShare": 0 },
+          "flags": { "addsAdjacency": "mortgage" },
+          "revealText": "Pritesh Damani argued that the only sustainable way to increase mortgage attach rates is to build a product that agents genuinely prefer. That means faster closings, better rates, and a borrower experience that makes the agent look good. It is the most expensive path, but it is the only one that does not damage the agent relationship.",
+          "revealSource": "Pritesh Damani — Building Tech That Agents Actually Use"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-11",
+      "phase": 3,
+      "title": "Commission Compression",
+      "description": "Flat-fee and discount brokerages are gaining market share. Your agents are worried about their commissions, and some are threatening to leave for companies that promise higher volume through lower prices.",
+      "choices": [
+        {
+          "id": "brokerage-11-A",
+          "label": "Cut Splits to Compete",
+          "description": "Reduce your take so agents can offer lower consumer commissions while keeping their income stable. Your revenue per transaction drops, but agents stay and volume may increase.",
+          "effects": { "cash": -5, "revenue": -10, "agentRep": 10, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Tamir Poleg observed that commission compression is not a temporary trend — it is the structural reality of a market that is becoming more transparent. The brokerages that adapt their economics early will survive. The ones that try to defend the old commission structure will find themselves with expensive overhead and departing agents.",
+          "revealSource": "Tamir Poleg — The Real Brokerage Model"
+        },
+        {
+          "id": "brokerage-11-B",
+          "label": "Hold Premium Positioning",
+          "description": "Defend your current commission structure by emphasizing the value your agents deliver. Premium service justifies premium pricing — but you risk losing price-sensitive agents.",
+          "effects": { "cash": 0, "revenue": 5, "agentRep": -5, "consumerTrust": -5, "marketShare": -1 },
+          "flags": {},
+          "revealText": "Sam Sawyer argued that holding premium pricing only works if you can genuinely articulate what consumers get for the extra money. In a world where consumers can compare commission rates online in seconds, the premium positioning requires constant proof of value. Without it, you are just expensive.",
+          "revealSource": "Sam Sawyer — Culture in a Virtual Brokerage"
+        },
+        {
+          "id": "brokerage-11-C",
+          "label": "Acquire a Flat-Fee Brokerage",
+          "description": "Hedge your bets by buying a discount competitor. Expensive, and running two brands with different economics is complex, but you're covered either way the market moves.",
+          "effects": { "cash": -20, "revenue": 5, "agentRep": 0, "consumerTrust": 5, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Leo Pareja suggested that acquiring a flat-fee competitor is the most pragmatic response to commission compression. You cannot know which model will win, so owning both hedges your risk. The operational complexity of running two brands is real, but it is manageable if you keep the teams and cultures separate.",
+          "revealSource": "Leo Pareja — The Brokerage Economics Problem"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "brokerage-12",
+      "phase": 3,
+      "title": "The Endgame",
+      "description": "The brokerage landscape is consolidating and evolving. Your company has survived the founding years, grown through challenges, and now faces its final strategic choice.",
+      "choices": [
+        {
+          "id": "brokerage-12-A",
+          "label": "Acquire to Consolidate",
+          "description": "Buy smaller competitors to build scale. Expensive and integration-heavy, but you become a dominant force in your markets.",
+          "effects": { "cash": -30, "revenue": 10, "agentRep": -5, "consumerTrust": 0, "marketShare": 5 },
+          "flags": {},
+          "revealText": "Wendy Forsythe cautioned that brokerage consolidation through acquisition is a game of agent retention. You pay for the brand, the office, and the market position — but the actual asset is the agents, and they have no obligation to stay. The acquirers who succeed retain ninety percent of the agents. The ones who fail retain sixty percent and overpaid.",
+          "revealSource": "Wendy Forsythe — Scaling Agent Recruitment"
+        },
+        {
+          "id": "brokerage-12-B",
+          "label": "Merge With a Portal or Fintech",
+          "description": "Combine your brokerage with a portal or mortgage company to create a vertically integrated platform. The game ends with a score modifier based on the strategic fit.",
+          "effects": { "cash": 30, "revenue": 10, "agentRep": -5, "consumerTrust": 5, "marketShare": 3 },
+          "flags": { "endsGame": true, "scoreMultiplier": 1.4 },
+          "revealText": "Sean Soderstrom predicted that the future of real estate belongs to vertically integrated companies that combine search, brokerage, and mortgage into a single experience. The question is who assembles those pieces — the portal, the brokerage, or the fintech. The company that controls the consumer relationship has the leverage to build the rest around it.",
+          "revealSource": "Sean Soderstrom — The Office Question"
+        },
+        {
+          "id": "brokerage-12-C",
+          "label": "Stay Independent and Profitable",
+          "description": "Reject merger offers and focus on building a sustainably profitable independent brokerage. Costs rise as competition intensifies, but you keep full control.",
+          "effects": { "cash": -10, "revenue": 10, "agentRep": 10, "consumerTrust": 5, "marketShare": 1 },
+          "flags": { "increaseBurnRate": 5 },
+          "revealText": "Orly Ripmaster embodied the independent path: profitable, patient, and unapologetically focused on agents over investors. She argued that the companies chasing scale at the expense of profitability are building sandcastles. An independent brokerage that makes money every year will outlast the ones that burn through billions chasing a vision of dominance that may never arrive.",
+          "revealSource": "Orly Ripmaster — Building Without Outside Capital"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "decisions": [
+    {
+      "id": "fintech-1",
+      "phase": 1,
+      "title": "What's Your Wedge?",
+      "description": "You're entering real estate from the outside with capital, technology, and a theory about how transactions should work. Your wedge determines your capital requirements, your risk profile, and whether the industry sees you as a threat or a tool.",
+      "choices": [
+        {
+          "id": "fintech-1-A",
+          "label": "iBuying / Buy Homes Directly",
+          "description": "Buy homes directly from sellers with cash, renovate lightly, and resell. Opendoor's model: eliminate uncertainty for sellers. You need enormous capital, you carry inventory risk, and a market downturn can wipe you out overnight.",
+          "effects": { "cash": -25, "revenue": 10, "agentRep": -10, "consumerTrust": 10, "marketShare": 3 },
+          "flags": { "setsWedge": "ibuying" },
+          "revealText": "Greg Schwartz described the iBuying thesis as fundamentally sound but operationally terrifying. You are making a price bet on every single home you buy, and the market does not care about your algorithm. Opendoor proved the model can work at scale, but Zillow proved it can also lose you a billion dollars in a single quarter when your pricing models are wrong.",
+          "revealSource": "Greg Schwartz — The iBuying Bet"
+        },
+        {
+          "id": "fintech-1-B",
+          "label": "Cash Offers for Buyers",
+          "description": "Help buyers compete by making cash offers on their behalf, then converting to a mortgage after closing. Homeward's model: moderate capital needs, agent-friendly, and you solve a real pain point in competitive markets.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": 5, "consumerTrust": 10, "marketShare": 2 },
+          "flags": { "setsWedge": "cashOffer" },
+          "revealText": "Tim Heyl built Homeward around a simple insight: in a hot market, a cash offer wins. Agents loved it because it made their buyers competitive without cutting the agent out of the transaction. The capital requirements are real but manageable because you are not speculating on home values — you are bridging a financing gap for a buyer who already has a mortgage approval.",
+          "revealSource": "Tim Heyl — The Cash Offer Wedge"
+        },
+        {
+          "id": "fintech-1-C",
+          "label": "Discount Brokerage",
+          "description": "Offer sellers a lower commission rate by using technology to reduce costs. Aalto's model: cheap to start and consumers love the savings, but agents will work against you at every opportunity.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": -15, "consumerTrust": 10, "marketShare": 1 },
+          "flags": { "setsWedge": "discount" },
+          "revealText": "Nick Narodny launched Aalto with a discount model that seemed logically unassailable — why should sellers pay six percent when technology can reduce costs? But he learned the brutal reality: agents control the transaction at critical moments, and a discount brokerage that alienates agents finds that its listings mysteriously get fewer showings, slower offers, and worse outcomes.",
+          "revealSource": "Nick Narodny — The Aalto Story"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-2",
+      "phase": 1,
+      "title": "Do You Need Agents?",
+      "description": "The million-dollar question for every fintech entrant: are agents your competition or your distribution channel? Get this wrong and no amount of capital or technology will save you.",
+      "choices": [
+        {
+          "id": "fintech-2-A",
+          "label": "Go Direct-to-Consumer",
+          "description": "Skip agents entirely and build a consumer brand. Consumers get lower costs and a simpler experience. But agents will actively sabotage your deals at the offer table.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": -20, "consumerTrust": 10, "marketShare": 1 },
+          "flags": { "setsAgentStrategy": "direct" },
+          "revealText": "Nick Narodny described Aalto's fatal mistake with painful clarity: they stopped answering the phone at the offer table. When a listing agent calls to negotiate, someone has to pick up and advocate for the buyer. Aalto's technology-first approach meant consumers were unrepresented at the most critical moment of the transaction, and deals fell apart.",
+          "revealSource": "Nick Narodny — The Aalto Story"
+        },
+        {
+          "id": "fintech-2-B",
+          "label": "Agents Are Your Channel",
+          "description": "Make agents your primary distribution partner. Give them tools that make their lives easier, and they will bring you customers. Slower growth, but you have the industry working with you instead of against you.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 10, "consumerTrust": 0, "marketShare": 2 },
+          "flags": { "setsAgentStrategy": "channel" },
+          "revealText": "Greg Schwartz explained the evolution of Opendoor's thinking: they started believing agents were unnecessary and ended up realizing agents were the perfect distribution channel. Opendoor for Agents became their fastest-growing product because agents already had the relationships and the trust. The partnership was not a compromise — it was the unlock.",
+          "revealSource": "Greg Schwartz — The iBuying Bet"
+        },
+        {
+          "id": "fintech-2-C",
+          "label": "Offer an Exclusive Tool",
+          "description": "Give agents something they cannot get anywhere else — exclusive inventory, proprietary data, or a unique capability. They come to you not out of loyalty but because you have something no one else does.",
+          "effects": { "cash": -10, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 1 },
+          "flags": { "setsAgentStrategy": "exclusive" },
+          "revealText": "Nick Narodny admitted that Aalto's one genuine success was off-market inventory. When you could tell an agent you had a home nobody else knew about, they would sign up instantly. The exclusivity created demand that no amount of marketing could replicate. The tragedy was that Aalto never doubled down on the one thing that actually worked.",
+          "revealSource": "Nick Narodny — The Aalto Story"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-3",
+      "phase": 1,
+      "title": "How Do You Fund This?",
+      "description": "Fintech in real estate is capital-intensive no matter which wedge you choose. Your funding strategy determines your runway, your growth rate, and who controls your destiny.",
+      "choices": [
+        {
+          "id": "fintech-3-A",
+          "label": "Raise Massive VC ($50M+)",
+          "description": "Go big from Sequoia, Andreessen, or similar. You get the capital to move fast and the credibility to recruit top talent. But the venture clock starts ticking immediately — you have twelve quarters to show product-market fit or the board gets restless.",
+          "effects": { "cash": 60, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsVentureClock": true, "setsFundingPath": "massiveVC" },
+          "revealText": "Nick Narodny raised fifty-three million dollars from Sequoia for Aalto, and he described the relationship with nuance: Sequoia was supportive but the capital came with expectations. Fifty-three million from Sequoia does not buy you patience — it buys you a very specific timeline to prove the model works. When that timeline expires, the conversation changes.",
+          "revealSource": "Nick Narodny — The Aalto Story"
+        },
+        {
+          "id": "fintech-3-B",
+          "label": "Smaller Strategic Rounds",
+          "description": "Raise twenty to twenty-five million from investors who understand real estate. Less capital but more patience, better advice, and no expectation of becoming a unicorn in three years.",
+          "effects": { "cash": 25, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsFundingPath": "strategic" },
+          "revealText": "Court Cunningham argued that the right investors matter more than the right amount. Strategic investors who understand real estate's cyclicality will not panic when volume drops forty percent — they have seen it before. The founders who raised from generalist tech VCs found themselves explaining basic industry dynamics to board members who expected software-like growth curves.",
+          "revealSource": "Court Cunningham — The Orchard Approach"
+        },
+        {
+          "id": "fintech-3-C",
+          "label": "Get to Revenue Fast",
+          "description": "Skip the fundraising roadshow and focus obsessively on revenue. No extra cash, no venture clock, no board to answer to. You grow slowly and every dollar is earned, not raised.",
+          "effects": { "cash": 0, "revenue": 5, "agentRep": 0, "consumerTrust": 5, "marketShare": 0 },
+          "flags": { "setsFundingPath": "revenue" },
+          "revealText": "Megan Meyer-Toolson observed that the companies that survived the 2022 downturn were the ones that had revenue, not just runway. Venture capital disappears overnight when markets turn, but revenue from actual customers continues even in a downturn. The companies that prioritized revenue over growth found themselves standing while their better-funded competitors were laying off half their staff.",
+          "revealSource": "Megan Meyer-Toolson — Surviving the Downturn"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-4",
+      "phase": 1,
+      "title": "Board Dynamics",
+      "description": "Your investors are seated. Now the real question: who actually runs this company? The relationship between founder and board determines how you navigate every crisis ahead.",
+      "choices": [
+        {
+          "id": "fintech-4-A",
+          "label": "Collaborative Board",
+          "description": "They advise, you decide. You maintain a healthy dialogue with investors who respect your domain expertise. They push you on metrics but defer on strategy. This works until results disappoint.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsBoardDynamic": "collaborative" },
+          "revealText": "Nick Narodny described his relationship with Sequoia as initially collaborative — they trusted his vision and gave him room to execute. But when growth stalled, the questions shifted from supportive to probing. The call he dreaded most was when his board member asked, 'Do you still have energy for this?' That question is not about energy. It is about whether you are ready to accept this is not working.",
+          "revealSource": "Nick Narodny — The Aalto Story"
+        },
+        {
+          "id": "fintech-4-B",
+          "label": "Growth-at-All-Costs Board",
+          "description": "Your board pushes relentlessly for growth metrics. They want hockey sticks, blitz-scaling, and category dominance. You get aggressive targets and the resources to hit them — but wasteful spending becomes structural.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 0, "consumerTrust": 0, "marketShare": 2 },
+          "flags": { "setsBoardDynamic": "growth" },
+          "revealText": "Court Cunningham witnessed the damage that growth-obsessed boards inflict on proptech companies. The board demands growth, so you spend on marketing. Marketing does not convert, so you spend more. The cycle of wasteful spending becomes self-reinforcing until someone finally asks whether the core product actually works. By then you have burned through half your runway proving it does not.",
+          "revealSource": "Court Cunningham — The Orchard Approach"
+        },
+        {
+          "id": "fintech-4-C",
+          "label": "Founder Controls Everything",
+          "description": "You maintain full control through super-voting shares or simply by refusing outside capital that comes with board seats. You answer to no one, which means you can be bold — or you can be wrong with nobody to stop you.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsBoardDynamic": "founderControl" },
+          "revealText": "Nick Boniakowski reflected on the tension between founder conviction and board accountability. Some founders need a board to tell them the hard truths they cannot see themselves. But others — the ones with genuine insight — are destroyed by boards that force consensus thinking on unconventional strategies. The question is whether you are the visionary or the one who just thinks you are.",
+          "revealSource": "Nick Boniakowski — Founder vs. Board"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-5",
+      "phase": 2,
+      "title": "Customer Acquisition Is Too Expensive",
+      "description": "Your cost to acquire a customer is higher than your revenue per transaction. Marketing is burning cash and the unit economics do not work. Something has to change.",
+      "choices": [
+        {
+          "id": "fintech-5-A",
+          "label": "Billboards and Brand Marketing",
+          "description": "Invest heavily in traditional advertising — billboards, radio, digital display. Build brand awareness so consumers come to you when they are ready to transact. Expensive and hard to measure, but it worked for Zillow.",
+          "effects": { "cash": -20, "revenue": 5, "agentRep": 0, "consumerTrust": 10, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Nick Narodny described Aalto's two-hundred-fifty-thousand-dollar billboard campaign as money set on fire. They put up billboards across the Bay Area and got almost nothing in return. Real estate is a low-frequency, high-stakes decision — consumers do not see a billboard and decide to sell their home. The brand awareness play only works if you have years and hundreds of millions to sustain it.",
+          "revealSource": "Nick Narodny — The Aalto Story"
+        },
+        {
+          "id": "fintech-5-B",
+          "label": "Referral and Agent Channel",
+          "description": "Stop spending on consumer marketing and let agents bring you customers. Cheaper and more targeted, but growth is slower and you are dependent on agent willingness to promote your product.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 10, "consumerTrust": 0, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Tim Heyl recognized early that agents are the most efficient customer acquisition channel in real estate. An agent who trusts your product will bring you every qualified buyer they work with. The cost per acquisition through agents is a fraction of direct-to-consumer marketing because the agent has already built the relationship and earned the trust that you would spend millions trying to create from scratch.",
+          "revealSource": "Tim Heyl — The Cash Offer Wedge"
+        },
+        {
+          "id": "fintech-5-C",
+          "label": "Exclusive Inventory as Marketing",
+          "description": "Use exclusive or off-market listings to drive demand. If you have homes nobody else knows about, consumers and agents will come to you for free. The product is the marketing.",
+          "effects": { "cash": -5, "revenue": 0, "agentRep": 5, "consumerTrust": 10, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Nick Narodny discovered that exclusive inventory was Aalto's most powerful acquisition tool. If you told an agent or a buyer that you had one home nobody else knew about, they would sign up immediately. The exclusivity created urgency and demand that no billboard could match. The problem was scaling it — getting enough off-market inventory to sustain a business was a chicken-and-egg problem they never solved.",
+          "revealSource": "Nick Narodny — The Aalto Story"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-6",
+      "phase": 2,
+      "title": "The Agent Community Is Hostile",
+      "description": "Agents are organizing against you on social media, in Facebook groups, and at brokerage meetings. Your listings are getting fewer showings. Your offers are mysteriously losing to competitors. The industry is pushing back.",
+      "choices": [
+        {
+          "id": "fintech-6-A",
+          "label": "Double Down on the Consumer",
+          "description": "Ignore the agents and lean into your consumer message. You are the future, they are the past. This energizes your team and resonates with consumers, but agents will work against you permanently.",
+          "effects": { "cash": 0, "revenue": 5, "agentRep": -15, "consumerTrust": 10, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Varun Krishna observed that companies which declared war on agents misunderstood the power structure of real estate. Agents control the critical moments of a transaction — the showing, the negotiation, the inspection response. A company that agents actively dislike will find its transactions sabotaged in ways that are invisible to the consumer but devastating to the business.",
+          "revealSource": "Varun Krishna — How Do I Get You a Loan"
+        },
+        {
+          "id": "fintech-6-B",
+          "label": "Pivot to Partnerships",
+          "description": "Reach out to agent communities, sponsor brokerage events, and redesign your product to include agents in the transaction. Humble yourself and rebuild the relationship from scratch.",
+          "effects": { "cash": -10, "revenue": 0, "agentRep": 10, "consumerTrust": -5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Greg Schwartz described Opendoor's evolution from agent adversary to agent partner as the most important strategic shift in the company's history. They went from believing agents were unnecessary to building Opendoor for Agents, which became their most effective growth channel. The lesson was clear: any startup trying to circumvent the agent in residential real estate is doomed to learn this lesson the hard way.",
+          "revealSource": "Greg Schwartz — The iBuying Bet"
+        },
+        {
+          "id": "fintech-6-C",
+          "label": "Proactive Community Outreach",
+          "description": "Get ahead of the narrative before agents define you. Host town halls, do ride-alongs with local agents, show up at association meetings. It is expensive and time-consuming, but it prevents the hostility from becoming permanent.",
+          "effects": { "cash": -5, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Austin Allison reflected on Pacaso's experience in Napa Valley as a cautionary tale. The community organized against them before Pacaso had a chance to explain what they actually did. His biggest regret was not getting ahead of the narrative — not showing up in person, not meeting with local agents and neighbors before the opposition crystallized. Once the narrative is set, it is almost impossible to change.",
+          "revealSource": "Austin Allison — The Pacaso Lesson"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-7",
+      "phase": 2,
+      "title": "Unit Economics Don't Work",
+      "description": "You are acquiring customers but losing money on every transaction. The gap between customer acquisition cost and revenue per deal is widening, not closing. Your board is asking hard questions about the path to profitability.",
+      "choices": [
+        {
+          "id": "fintech-7-A",
+          "label": "Subsidize Growth with VC",
+          "description": "Keep burning cash to acquire customers and bet that scale will fix the economics. This is the classic venture playbook: grow first, monetize later. It works until the money runs out.",
+          "effects": { "cash": -20, "revenue": 5, "agentRep": 0, "consumerTrust": 5, "marketShare": 3 },
+          "flags": {},
+          "revealText": "Court Cunningham watched multiple proptech companies follow the subsidize-and-pray playbook. They burn venture capital acquiring customers at a loss, believing that scale will eventually produce unit economics. But real estate is not software — there are no zero-marginal-cost customers. Every transaction has real costs, and those costs do not decrease with volume the way a SaaS subscription does.",
+          "revealSource": "Court Cunningham — The Orchard Approach"
+        },
+        {
+          "id": "fintech-7-B",
+          "label": "Raise Prices",
+          "description": "Remove discounts, raise fees, and find out whether customers value your product enough to pay full price. You will lose some volume, but the customers who stay are actually profitable.",
+          "effects": { "cash": 5, "revenue": 10, "agentRep": 0, "consumerTrust": -10, "marketShare": -2 },
+          "flags": {},
+          "revealText": "Megan Meyer-Toolson shared a counterintuitive discovery: when you remove the discount, volume stays the same or goes up. Consumers who chose you for the discount were not loyal — they were bargain hunters. The consumers who stay after a price increase are the ones who genuinely value your service, and they are far more profitable and far less likely to churn.",
+          "revealSource": "Megan Meyer-Toolson — Surviving the Downturn"
+        },
+        {
+          "id": "fintech-7-C",
+          "label": "Cut to One Profitable Product",
+          "description": "Shut down everything that loses money and focus on the single product line where unit economics actually work. Painful and demoralizing, but it might be the only path to survival.",
+          "effects": { "cash": 5, "revenue": -5, "agentRep": 0, "consumerTrust": -5, "marketShare": -1 },
+          "flags": {},
+          "revealText": "Garth Graham advised fintech founders to find their one thing that works and ruthlessly abandon everything else. The temptation is to diversify, to add products, to cross-sell — but if your core transaction is not profitable, adding more unprofitable transactions just accelerates your death. Find the one product where you make money and build everything around that.",
+          "revealSource": "Garth Graham — Mortgage Economics"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-8",
+      "phase": 2,
+      "title": "A Market Shock Hits",
+      "description": "Interest rates spike from three percent to seven percent. Cash offers dry up, transaction volume collapses, and the homes in your inventory are losing value daily. The market has turned against you. What do you do?",
+      "choices": [
+        {
+          "id": "fintech-8-A",
+          "label": "Cut Costs Aggressively",
+          "description": "Layoffs, shut down product lines, close offices. Survive at all costs. Your team will be devastated and your brand will suffer, but you will live to fight another day.",
+          "effects": { "cash": 15, "revenue": -10, "agentRep": -5, "consumerTrust": -10, "marketShare": -2 },
+          "flags": {},
+          "revealText": "Nick Narodny faced the agonizing decision to cut Aalto's team when the market turned. The people you hired because you believed in the mission are the same people you now have to let go because the market decided your mission does not work right now. The emotional toll on founders is enormous, and the best people — the ones with options — leave first.",
+          "revealSource": "Nick Narodny — The Aalto Story"
+        },
+        {
+          "id": "fintech-8-B",
+          "label": "Go on Offense",
+          "description": "While competitors retrench, grab market share. Hire their best people, take their customers, and invest in product. You need deep pockets and iron nerves, but the companies that invest through downturns often emerge dominant.",
+          "effects": { "cash": -20, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 3 },
+          "flags": {},
+          "revealText": "Justin Messer described the January 2023 mindset of the companies that survived: while everyone else was cutting, the winners were investing. The best talent is available during downturns because competitors are laying off. The best customers are available because their current providers are pulling back. If you have the capital and the conviction, a downturn is the best time to build.",
+          "revealSource": "Justin Messer — Building Through a Downturn"
+        },
+        {
+          "id": "fintech-8-C",
+          "label": "Pivot the Business Model",
+          "description": "The market has invalidated your current approach. Rather than double down or cut, fundamentally redesign what you do. Risky and disorienting, but sometimes the original model simply cannot work in the new environment.",
+          "effects": { "cash": -10, "revenue": -5, "agentRep": 0, "consumerTrust": -5, "marketShare": 0 },
+          "flags": { "setsPivotFlag": true },
+          "revealText": "Tim Heyl pivoted Homeward from buy-side to sell-side when the market turned, and it saved the company. The original cash-offer product depended on a hot market where buyers competed. When rates spiked and the market cooled, the buy-side product lost its urgency. The sell-side pivot was not planned — it was survival. And it worked because the team was willing to let go of their original vision.",
+          "revealSource": "Tim Heyl — The Cash Offer Wedge"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-9",
+      "phase": 3,
+      "title": "The Path-Specific Crisis",
+      "description": "Your original wedge has created a crisis unique to your model. The bill for your founding choices is coming due, and there is no playbook for what comes next.",
+      "choices": [
+        {
+          "id": "fintech-9-A",
+          "label": "Liquidate and Cut Losses",
+          "description": "If you are holding homes, sell everything immediately even at a loss. If your cash offer product is stalling, shut it down. If your discount is not driving volume, drop it. Stop the bleeding now.",
+          "effects": { "cash": 10, "revenue": -15, "agentRep": 0, "consumerTrust": -10, "marketShare": -3 },
+          "flags": {},
+          "revealText": "Greg Schwartz recounted how Zillow exited iBuying by selling its entire inventory at a massive loss. The decision was brutal but rational — every day they held homes, they lost more money. Opendoor chose to hold and wait, absorbing over a billion dollars in losses. Neither approach was clearly right, but the companies that made a decision and committed to it fared better than those that dithered.",
+          "revealSource": "Greg Schwartz — The iBuying Bet"
+        },
+        {
+          "id": "fintech-9-B",
+          "label": "Hold and Weather the Storm",
+          "description": "Keep your inventory, maintain your product, and trust that the market will recover. You will absorb significant losses in the short term, but if you survive, you emerge with assets that appreciate when conditions improve.",
+          "effects": { "cash": -15, "revenue": -5, "agentRep": 0, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Varun Krishna pointed out that real estate is cyclical, and the companies that survive cycles are the ones that do not panic-sell at the bottom. Opendoor held through massive losses because they believed in the long-term thesis. The question is whether your balance sheet can survive long enough for the thesis to play out — many companies have been right about the future but ran out of money before it arrived.",
+          "revealSource": "Varun Krishna — How Do I Get You a Loan"
+        },
+        {
+          "id": "fintech-9-C",
+          "label": "Convert to a New Model",
+          "description": "Transform your existing assets into a different business. Homes become rental inventory. Cash offer infrastructure becomes mortgage origination. Your discount platform becomes agent tools. Reinvent while you still have resources.",
+          "effects": { "cash": -10, "revenue": 5, "agentRep": 5, "consumerTrust": 0, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Megan Meyer-Toolson noted that the most creative founders treat a crisis as permission to rebuild. The infrastructure you built for one business model often has components that are valuable in a completely different context. The teams that see inventory as rental pipeline, or cash offer systems as mortgage tools, are finding second lives for technology that the market has temporarily rejected.",
+          "revealSource": "Megan Meyer-Toolson — Surviving the Downturn"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-10",
+      "phase": 3,
+      "title": "The Pivot Question",
+      "description": "Your original model has hit a wall. The market is telling you something needs to change fundamentally — not incrementally. Do you have the courage to become a different company?",
+      "choices": [
+        {
+          "id": "fintech-10-A",
+          "label": "Flip Buy-Side to Sell-Side",
+          "description": "Shift your focus from helping buyers to helping sellers. The sell side has different economics, different customer psychology, and different competitive dynamics. Homeward made this pivot and it saved the company.",
+          "effects": { "cash": -10, "revenue": 10, "agentRep": 5, "consumerTrust": 5, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Tim Heyl described Homeward's sell-side pivot as the hardest and most important decision the company ever made. Everything they had built was optimized for buyers. Pivoting to sellers meant rebuilding product, retraining the team, and admitting that their original thesis was incomplete. But the sell-side economics were dramatically better, and the pivot saved the company from running out of cash.",
+          "revealSource": "Tim Heyl — The Cash Offer Wedge"
+        },
+        {
+          "id": "fintech-10-B",
+          "label": "Flip Transactional to Consultative",
+          "description": "Stop trying to own the transaction and become a trusted advisor. Help people navigate real estate decisions without trying to capture the commission. Lower revenue per interaction, but higher trust and retention.",
+          "effects": { "cash": -5, "revenue": -5, "agentRep": 10, "consumerTrust": 10, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Austin Allison reflected on a huge missed opportunity in the Pacaso model. The company was positioned to become a trusted advisor for second-home ownership — helping people think through the decision, not just execute the transaction. Instead, they focused on the transaction and missed the consultative relationship that would have created lifetime customer value and reduced acquisition costs to nearly zero.",
+          "revealSource": "Austin Allison — The Pacaso Lesson"
+        },
+        {
+          "id": "fintech-10-C",
+          "label": "Flip D2C to Agent-Powered",
+          "description": "Abandon your direct-to-consumer strategy and rebuild entirely around agents. This is the pivot that Opendoor, Homeward, and nearly every surviving fintech company has made. Agents are not the obstacle — they are the answer.",
+          "effects": { "cash": -5, "revenue": 5, "agentRep": 10, "consumerTrust": -5, "marketShare": 2 },
+          "flags": {},
+          "revealText": "Greg Schwartz summarized Opendoor's entire evolution in one insight: any startup trying to circumvent the agent is doomed to learn this lesson the expensive way. Opendoor spent years and hundreds of millions of dollars before arriving at the conclusion that agents are the most efficient distribution channel in residential real estate. The companies that start with this insight skip the most expensive mistake in proptech.",
+          "revealSource": "Greg Schwartz — The iBuying Bet"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-11",
+      "phase": 3,
+      "title": "Cross-Sell Challenges",
+      "description": "Your mortgage attach rate is stuck at eighteen percent. You sell a home but the buyer gets their mortgage elsewhere. The cross-sell revenue that your financial model depends on is not materializing.",
+      "choices": [
+        {
+          "id": "fintech-11-A",
+          "label": "Incentivize Agents (Carrots)",
+          "description": "Pay agents bonuses or improved splits when they steer clients to your mortgage product. Moderate revenue improvement and agents appreciate the economics, but you are paying for what should be organic adoption.",
+          "effects": { "cash": -10, "revenue": 10, "agentRep": 5, "consumerTrust": 0, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Garth Graham described the carrot approach as the only compliant way to improve mortgage attach rates. You cannot require agents to use your lender — that is verboten under RESPA — but you can make the economics attractive enough that it becomes the rational choice. The challenge is that every dollar you pay agents to refer mortgage business comes directly out of the margin you were trying to capture.",
+          "revealSource": "Garth Graham — Mortgage Economics"
+        },
+        {
+          "id": "fintech-11-B",
+          "label": "Require It for Leads (Sticks)",
+          "description": "Make mortgage pre-approval through your lender a requirement for receiving leads or accessing your platform. Legally risky, ethically questionable, and agents will resent it — but attach rates will skyrocket.",
+          "effects": { "cash": 0, "revenue": 15, "agentRep": -15, "consumerTrust": -10, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Garth Graham explained the uncomfortable reality of mortgage attach in real estate: it is verboten under RESPA to require consumers to use your affiliated lender, yet that is functionally how most integrated platforms operate. The legal line between incentive and requirement is blurry, and the companies that cross it generate enormous revenue until a regulator decides to make an example of them.",
+          "revealSource": "Garth Graham — Mortgage Economics"
+        },
+        {
+          "id": "fintech-11-C",
+          "label": "Fix the Mortgage Product",
+          "description": "The reason agents do not refer your mortgage is that the product is not good enough. Invest heavily in the mortgage experience — faster closings, better rates, better communication. Make it the obvious choice.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": 5, "consumerTrust": 10, "marketShare": 0 },
+          "flags": {},
+          "revealText": "Varun Krishna identified the core problem with mortgage cross-sell: you are asking a consumer to switch from their trusted local loan officer to Hector in the Cincinnati call center. The product has to be so much better that it overcomes the trust deficit. Faster closing, lower rates, and seamless integration are table stakes. If your mortgage product is merely as good as the alternative, nobody will switch.",
+          "revealSource": "Varun Krishna — How Do I Get You a Loan"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    },
+    {
+      "id": "fintech-12",
+      "phase": 3,
+      "title": "The Endgame",
+      "description": "You have fought your way through founding, growth, market shocks, and pivots. Now you face the final question: what happens to this company? Your remaining resources, your team, and your investors are all watching.",
+      "choices": [
+        {
+          "id": "fintech-12-A",
+          "label": "Keep Fighting",
+          "description": "Continue operating and burning cash toward a future that may never arrive. Your conviction says the model will work eventually. Your bank account says you have twelve to eighteen months to prove it.",
+          "effects": { "cash": -15, "revenue": 5, "agentRep": 0, "consumerTrust": 5, "marketShare": 1 },
+          "flags": {},
+          "revealText": "Justin Messer argued that persistence is the most underrated quality in proptech founders. The industry changes slowly, and the companies that survive long enough to see the shift are the ones that win. But persistence without adaptation is stubbornness, and the line between the two is only visible in hindsight. The founders who keep fighting need to honestly ask whether they are adapting or just refusing to quit.",
+          "revealSource": "Justin Messer — Building Through a Downturn"
+        },
+        {
+          "id": "fintech-12-B",
+          "label": "Accept Acquisition",
+          "description": "A larger company offers to acquire you. The price is below what you raised, but it gives your team a landing spot and your investors some return. The mission continues inside someone else's company.",
+          "effects": { "cash": 10, "revenue": 0, "agentRep": 0, "consumerTrust": 0, "marketShare": 0 },
+          "flags": { "setsGameEnd": "acquisition" },
+          "revealText": "Court Cunningham navigated the acquisition of Orchard with the clarity of a founder who understood that survival is not the same as winning. Sometimes the best outcome for your team, your investors, and your customers is to merge your technology and vision into a company that has the resources to see it through. The ego cost is real, but the alternative — running out of money with nothing to show — is worse.",
+          "revealSource": "Court Cunningham — The Orchard Approach"
+        },
+        {
+          "id": "fintech-12-C",
+          "label": "Return Capital and Start Fresh",
+          "description": "Wind down the company, return remaining capital to investors, and walk away with your reputation intact. Your investors respect the honesty. You are free to start again with hard-won lessons.",
+          "effects": { "cash": 0, "revenue": 0, "agentRep": 5, "consumerTrust": 5, "marketShare": 0 },
+          "flags": { "setsGameEnd": "windDown" },
+          "revealText": "Nick Narodny offered to return Aalto's remaining capital to Sequoia and shut down. To his surprise, they declined and backed him on his next venture, Titus. The willingness to admit failure honestly and return money rather than burn it on a lost cause earned more credibility with investors than any pitch deck ever could. In Silicon Valley, how you end a company matters as much as how you start one.",
+          "revealSource": "Nick Narodny — The Aalto Story"
+        }
+      ],
+      "isSubDecision": false,
+      "triggeredBy": null
+    }
+  ]
+}

@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://proptechtrail.com"),
   title: "The PropTech Trail — The Oregon Trail for Real Estate",
   description:
     "An interactive decision-tree strategy game based on 53 real interviews from Mike DelPrete's Context podcast. Build a real estate company from the ground up.",
@@ -21,6 +22,13 @@ export const metadata: Metadata = {
     title: "The PropTech Trail",
     description: "The Oregon Trail for Real Estate. Every decision has real consequences.",
     type: "website",
+    url: "https://proptechtrail.com",
+    siteName: "The PropTech Trail",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The PropTech Trail",
+    description: "The Oregon Trail for Real Estate. Every decision has real consequences.",
   },
 };
 

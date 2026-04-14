@@ -122,7 +122,7 @@ export default function EndScreen({ state, onRestart }: EndScreenProps) {
     // Play the game at...
     ctx.fillStyle = '#4ade80';
     ctx.font = 'bold 12px monospace';
-    ctx.fillText('Play at proptech-trail.vercel.app', 300, 418);
+    ctx.fillText('Play at proptechtrail.com', 300, 418);
 
     // Podcast source
     ctx.fillStyle = '#6b7280';

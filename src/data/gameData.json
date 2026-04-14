@@ -3482,14 +3482,14 @@
       {
         "id": "debt-A",
         "label": "Take On Debt",
-        "description": "Borrow $60M to keep the lights on. But lenders are watching — and so is the market.",
+        "description": "Borrow $50M to keep the lights on. But lenders are watching — and so is the market.",
         "effects": {
-          "cash": 60,
+          "cash": 50,
           "agentRep": -5,
           "consumerTrust": -5
         },
         "flags": {
-          "addDebt": 60
+          "addDebt": 50
         },
         "revealText": "Debt is a lifeline and a noose. Redfin's debt exceeded $1B while the core business bled cash. Every dollar of debt service is a dollar that cannot go to fixing the model. Agents, customers, and competitors can smell the weakness. And if you hit zero again — game over.",
         "revealSource": "Deep Dive \u2014 The Redfin Compass Deal"

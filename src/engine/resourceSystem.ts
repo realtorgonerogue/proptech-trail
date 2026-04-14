@@ -7,23 +7,23 @@ const AGENT_REP_PENALTY_THRESHOLD = 20;
 const CONSUMER_TRUST_PENALTY_THRESHOLD = 20;
 const AGENT_REP_REVENUE_PENALTY = 0.25;
 const CONSUMER_TRUST_REVENUE_PENALTY = 0.3;
-const BASE_CASH_BURN = 6;
+const BASE_CASH_BURN = 8;
 
 // Cash burn scales with company size — but more gradually
 function getScaledCashBurn(state: GameState): number {
   let burn = BASE_CASH_BURN;
 
-  // Burn scales with round (later = more expensive) — +1 every 5 rounds
-  burn += Math.floor(state.round / 5);
+  // Burn scales with round (later = more expensive) — +1 every 4 rounds
+  burn += Math.floor(state.round / 4);
 
   // Each adjacency adds ongoing cost
-  burn += state.adjacencies.length * 2;
+  burn += state.adjacencies.length * 3;
 
   // Public company = higher overhead
-  if (state.quarterlyPressure) burn += 2;
+  if (state.quarterlyPressure) burn += 3;
 
   // W-2 agents = payroll burden
-  if (state.flexRisk) burn += 3;
+  if (state.flexRisk) burn += 4;
 
   return burn;
 }
@@ -82,7 +82,7 @@ export function processRoundEffects(state: GameState): {
 
   // Revenue converts to cash — this is your core income engine
   // Higher multiplier so revenue decisions actually matter
-  const revenueIncome = Math.round(resources.revenue * 0.6);
+  const revenueIncome = Math.round(resources.revenue * 0.5);
   resources.cash += revenueIncome;
 
   // Market share generates passive income — more transactions = more money
@@ -178,7 +178,7 @@ export function calculateCashBurn(state: GameState): number {
 
 // Net cash flow per round (for HUD display)
 export function calculateNetCashFlow(state: GameState): number {
-  const income = Math.round(state.resources.revenue * 0.6)
+  const income = Math.round(state.resources.revenue * 0.5)
     + getMarketShareRevenue(state.resources.marketShare);
   const burn = calculateCashBurn(state);
   return income - burn;

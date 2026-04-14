@@ -79,10 +79,10 @@ export default function TitleScreen({
           The Oregon Trail for Real Estate
         </p>
         <p className="text-gray-500 text-[11px] max-w-sm mx-auto leading-relaxed">
-          Based on 53 interviews from Mike DelPrete&apos;s{' '}
+          Based on 53 interviews from Mike DelPrete&apos;s Context podcast —{' '}
           <a href="https://mikedp.com" target="_blank" rel="noopener noreferrer"
             className="text-green-500 hover:text-green-400 underline">
-            Context podcast
+            mikedp.com
           </a>
         </p>
       </div>

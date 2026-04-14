@@ -208,10 +208,10 @@ export default function EndScreen({ state, onRestart }: EndScreenProps) {
       {/* Attribution */}
       <div className="text-center space-y-2 max-w-md w-full">
         <p className="text-gray-600 text-[10px] font-pixel">
-          Based on 53 interviews from Mike DelPrete&apos;s{' '}
+          Based on 53 interviews from Mike DelPrete&apos;s Context podcast —{' '}
           <a href="https://mikedp.com" target="_blank" rel="noopener noreferrer"
             className="text-green-600 hover:text-green-500 underline">
-            Context podcast
+            mikedp.com
           </a>
         </p>
         <div className="pt-2 border-t border-gray-800">

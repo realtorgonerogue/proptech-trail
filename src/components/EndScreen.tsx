@@ -28,68 +28,115 @@ export default function EndScreen({ state, onRestart }: EndScreenProps) {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Draw share card
+    // Draw share card — taller to fit credits nicely
     canvas.width = 600;
-    canvas.height = 400;
+    canvas.height = 500;
 
     // Background
     ctx.fillStyle = '#111827';
-    ctx.fillRect(0, 0, 600, 400);
+    ctx.fillRect(0, 0, 600, 500);
 
-    // Border
+    // Outer border
     ctx.strokeStyle = '#22c55e';
     ctx.lineWidth = 4;
-    ctx.strokeRect(8, 8, 584, 384);
+    ctx.strokeRect(8, 8, 584, 484);
+
+    // Header band
+    ctx.fillStyle = '#064e3b';
+    ctx.fillRect(8, 8, 584, 70);
 
     // Title
-    ctx.fillStyle = '#22c55e';
-    ctx.font = 'bold 20px monospace';
+    ctx.fillStyle = '#4ade80';
+    ctx.font = 'bold 22px monospace';
     ctx.textAlign = 'center';
-    ctx.fillText('THE PROPTECH TRAIL', 300, 45);
+    ctx.fillText('THE PROPTECH TRAIL', 300, 42);
+
+    // Tagline
+    ctx.fillStyle = '#86efac';
+    ctx.font = '11px monospace';
+    ctx.fillText('The Oregon Trail for Real Estate', 300, 62);
 
     // Archetype
-    ctx.fillStyle = '#9ca3af';
-    ctx.font = '14px monospace';
-    ctx.fillText(archNames[state.archetype || 'portal'] || 'Unknown', 300, 70);
+    ctx.fillStyle = '#d1d5db';
+    ctx.font = 'bold 14px monospace';
+    ctx.fillText(archNames[state.archetype || 'portal'] || 'Unknown', 300, 105);
 
-    // Score
+    // Score block
     ctx.fillStyle = '#fbbf24';
-    ctx.font = 'bold 48px monospace';
-    ctx.fillText(`${state.score || 0}`, 300, 140);
+    ctx.font = 'bold 64px monospace';
+    ctx.fillText(`${state.score || 0}`, 300, 180);
 
     ctx.fillStyle = '#d1d5db';
     ctx.font = '12px monospace';
-    ctx.fillText('POINTS', 300, 160);
+    ctx.fillText('POINTS', 300, 200);
 
-    // Title
+    // Leaderboard title
     ctx.fillStyle = '#22c55e';
     ctx.font = 'bold 16px monospace';
-    ctx.fillText(`"${state.leaderboardTitle || 'Unknown'}"`, 300, 195);
+    ctx.fillText(`"${state.leaderboardTitle || 'Unknown'}"`, 300, 230);
 
-    // Stats
+    // Stats (2-column layout)
     ctx.textAlign = 'left';
-    ctx.fillStyle = '#9ca3af';
-    ctx.font = '13px monospace';
-    const stats = [
-      `Rounds Survived: ${state.round}`,
-      `Market Share: ${state.resources.marketShare}`,
-      `Final Cash: $${state.resources.cash}M`,
-      `Adjacencies: ${state.adjacencies.length === 0 ? 'Focused' : state.adjacencies.join(', ')}`,
+    ctx.font = '12px monospace';
+    const leftStats = [
+      ['Rounds Survived', `${state.round}`],
+      ['Market Share', `${state.resources.marketShare}`],
     ];
-    stats.forEach((s, i) => {
-      ctx.fillText(s, 40, 240 + i * 24);
+    const rightStats = [
+      ['Final Cash', `$${state.resources.cash}M`],
+      ['Revenue', `${state.resources.revenue}`],
+    ];
+    leftStats.forEach(([label, val], i) => {
+      ctx.fillStyle = '#9ca3af';
+      ctx.fillText(label, 60, 280 + i * 22);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillText(val, 220, 280 + i * 22);
     });
+    rightStats.forEach(([label, val], i) => {
+      ctx.fillStyle = '#9ca3af';
+      ctx.fillText(label, 320, 280 + i * 22);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillText(val, 490, 280 + i * 22);
+    });
+
+    // Focus line
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#9ca3af';
+    ctx.font = '11px monospace';
+    const focusText = state.adjacencies.length === 0 ? 'Focused company' : `${state.adjacencies.length} business lines`;
+    ctx.fillText(focusText, 300, 345);
 
     // Game over reason
     ctx.fillStyle = '#ef4444';
-    ctx.font = '12px monospace';
-    ctx.textAlign = 'center';
-    ctx.fillText(state.gameOverReason || '', 300, 350);
+    ctx.font = 'italic 11px monospace';
+    ctx.fillText(state.gameOverReason || '', 300, 368);
 
-    // Attribution
-    ctx.fillStyle = '#4b5563';
+    // Divider
+    ctx.strokeStyle = '#374151';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(60, 395);
+    ctx.lineTo(540, 395);
+    ctx.stroke();
+
+    // Play the game at...
+    ctx.fillStyle = '#4ade80';
+    ctx.font = 'bold 12px monospace';
+    ctx.fillText('Play at proptech-trail.vercel.app', 300, 418);
+
+    // Podcast source
+    ctx.fillStyle = '#6b7280';
     ctx.font = '10px monospace';
-    ctx.fillText('Based on Mike DelPrete\'s Context podcast • mikedp.com', 300, 380);
+    ctx.fillText("Based on Mike DelPrete's Context podcast • mikedp.com", 300, 440);
+
+    // Author credits
+    ctx.fillStyle = '#9ca3af';
+    ctx.font = 'bold 11px monospace';
+    ctx.fillText('Built by Nick Aufenkamp', 300, 465);
+
+    ctx.fillStyle = '#22c55e';
+    ctx.font = '10px monospace';
+    ctx.fillText('thetartanteam.com  •  diyhomebuyeracademy.com', 300, 482);
 
     // Download
     const link = document.createElement('a');
@@ -159,13 +206,39 @@ export default function EndScreen({ state, onRestart }: EndScreenProps) {
       </div>
 
       {/* Attribution */}
-      <p className="text-gray-600 text-[10px] font-pixel text-center">
-        Based on 53 interviews from Mike DelPrete&apos;s{' '}
-        <a href="https://mikedp.com" target="_blank" rel="noopener noreferrer"
-          className="text-green-600 hover:text-green-500 underline">
-          Context podcast
-        </a>
-      </p>
+      <div className="text-center space-y-2 max-w-md w-full">
+        <p className="text-gray-600 text-[10px] font-pixel">
+          Based on 53 interviews from Mike DelPrete&apos;s{' '}
+          <a href="https://mikedp.com" target="_blank" rel="noopener noreferrer"
+            className="text-green-600 hover:text-green-500 underline">
+            Context podcast
+          </a>
+        </p>
+        <div className="pt-2 border-t border-gray-800">
+          <p className="text-gray-500 text-[10px] font-pixel mb-1.5">
+            Built by Nick Aufenkamp
+          </p>
+          <div className="flex items-center justify-center gap-3 text-[10px]">
+            <a
+              href="https://thetartanteam.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 hover:text-green-400 underline"
+            >
+              thetartanteam.com
+            </a>
+            <span className="text-gray-700">•</span>
+            <a
+              href="https://diyhomebuyeracademy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 hover:text-green-400 underline"
+            >
+              diyhomebuyeracademy.com
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* Hidden canvas for share card generation */}
       <canvas ref={canvasRef} className="hidden" />

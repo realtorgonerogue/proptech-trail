@@ -185,10 +185,34 @@ export default function TitleScreen({
       )}
 
       {/* Footer */}
-      <div className="text-center pb-8">
+      <div className="text-center pb-8 space-y-2">
         <p className="text-gray-600 text-[8px] sm:text-[9px] font-pixel">
           Every decision has consequences • Every reveal is real
         </p>
+        <div className="pt-3 border-t border-gray-800 max-w-md mx-auto">
+          <p className="text-gray-500 text-[10px] font-pixel mb-1.5">
+            Built by Nick Aufenkamp
+          </p>
+          <div className="flex items-center justify-center gap-3 text-[10px]">
+            <a
+              href="https://thetartanteam.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 hover:text-green-400 underline"
+            >
+              thetartanteam.com
+            </a>
+            <span className="text-gray-700">•</span>
+            <a
+              href="https://diyhomebuyeracademy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 hover:text-green-400 underline"
+            >
+              diyhomebuyeracademy.com
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
